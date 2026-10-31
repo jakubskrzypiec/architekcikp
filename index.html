@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architekci KP — pracownia architektoniczna, Katowice</title>
+<meta name="description" content="Architekci KP — pracownia architektoniczna z Katowic. Domy jednorodzinne, przebudowy, budynki wielorodzinne, obiekty użyteczności publicznej i wnętrza.">
+<meta name="theme-color" content="#f3f0ea">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <a href="#top" class="brand" aria-label="Architekci KP — strona główna">
+    <span class="brand-mark" aria-hidden="true">kp</span>
+    <span class="brand-text">
+      <span class="brand-name">Architekci KP</span>
+      <span class="brand-sub">Pracownia architektoniczna</span>
+    </span>
+  </a>
+  <nav class="nav" aria-label="Główna nawigacja">
+    <a href="#pracownia">Pracownia</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#przebudowy">Przebudowy</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a href="#kontakt" class="header-cta">Porozmawiajmy <span aria-hidden="true">↗</span></a>
+  <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Menu mobilne">
+    <a href="#pracownia">Pracownia</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#przebudowy">Przebudowy</a>
+    <a href="#oferta">Oferta</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="tel:+48507061155">+48 507 061 155</a>
+    <a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ HERO ============
+     Warstwy (od tyłu):
+     1. .hero-sky       — tło wizualizacji (niebo / otoczenie)      → assets/hero-bg.jpg
+     2. .hero-wordmark  — logo pracowni "za budynkiem"
+     3. .hero-building  — wycięty budynek / salon KEY (PNG z alfą) → assets/hero-building.png
+     Do czasu wgrania grafik widoczne są puste ramki. -->
+<section class="hero" aria-label="Architekci KP">
+  <div class="hero-sky" data-depth="0.08">
+    <div class="ph ph--hero"><span>Tło hero — wizualizacja AI realizacji „Salon KEY”<br>(niebo / otoczenie, 2560×1440, animacja: powolny zoom, zmiana światła)</span></div>
+  </div>
+
+  <div class="hero-wordmark" data-depth="0.22" aria-hidden="true">
+    <span class="wm-line wm-small">Architekci</span>
+    <span class="wm-line wm-big">KP</span>
+  </div>
+
+  <div class="hero-building" data-depth="0.36">
+    <div class="ph ph--cutout"><span>Budynek / bryła wycięta z tła (PNG z przezroczystością)<br>— przykrywa dolną część logo</span></div>
+  </div>
+
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Katowice · Śląsk · od 2005</p>
+    <h1 class="hero-title">Architektura,<br>która zostaje.</h1>
+    <div class="hero-actions">
+      <a href="#realizacje" class="btn btn--light">Zobacz realizacje <span aria-hidden="true">↘</span></a>
+      <a href="#kontakt" class="btn btn--ghost">Umów rozmowę <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <a href="#pracownia" class="hero-scroll" aria-label="Przewiń do sekcji Pracownia"><span></span></a>
+</section>
+
+<!-- ============ 01 PRACOWNIA ============ -->
+<section class="section studio" id="pracownia">
+  <div class="wrap">
+    <p class="label reveal"><span>01</span> Pracownia</p>
+    <div class="studio-grid">
+      <div class="studio-media reveal">
+        <div class="ph ph--portrait"><span>Zdjęcie pracowni / portret<br>Aleksandry Grundszok-Dudy</span></div>
+        <span class="tag">mgr inż. arch. Aleksandra Grundszok-Duda</span>
+      </div>
+      <div class="studio-copy">
+        <h2 class="h2 reveal">Projektujemy domy,<br>budynki i wnętrza<br>od pierwszej kreski.</h2>
+        <p class="lead reveal">Architekci KP to pracownia architektoniczna z Katowic. Prowadzimy inwestora od koncepcji, przez projekt budowlany i wykonawczy, aż po nadzór autorski na budowie.</p>
+        <p class="reveal">Projektujemy domy jednorodzinne, budynki wielorodzinne, obiekty użyteczności publicznej oraz kompleksowe aranżacje wnętrz. Szczególnie bliskie są nam przebudowy — budynki, które mają już swoją historię i potrzebują nowego życia.</p>
+        <dl class="stats reveal">
+          <div><dt>od 2005</dt><dd>prowadzimy pracownię</dd></div>
+          <div><dt>4</dt><dd>obszary projektowe</dd></div>
+          <div><dt>1</dt><dd>architekt prowadzący projekt</dd></div>
+        </dl>
+        <div class="link-row reveal">
+          <a href="#realizacje" class="line-link">Realizacje <span aria-hidden="true">↘</span></a>
+          <a href="#kontakt" class="line-link">Porozmawiajmy <span aria-hidden="true">↘</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 REALIZACJE (galeria jak u M. Serbisty) ============ -->
+<section class="section works" id="realizacje">
+  <div class="wrap works-head">
+    <div>
+      <p class="label reveal"><span>02</span> Realizacje</p>
+      <h2 class="display reveal">Miejsca projektowane<br>z kontekstem.</h2>
+    </div>
+    <div class="works-side reveal">
+      <p>Realizacje z Katowic i całego Śląska. Najedź, aby zatrzymać galerię.</p>
+      <div class="filters" role="tablist" aria-label="Filtruj realizacje">
+        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Wszystkie</button>
+        <button class="filter" data-filter="dom" role="tab" aria-selected="false">Domy</button>
+        <button class="filter" data-filter="przebudowa" role="tab" aria-selected="false">Przebudowy</button>
+        <button class="filter" data-filter="wnetrze" role="tab" aria-selected="false">Wnętrza</button>
+        <button class="filter" data-filter="obiekt" role="tab" aria-selected="false">Obiekty</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-label="Galeria realizacji">
+    <div class="marquee-track">
+      <!-- Karty – tytuły i zdjęcia do podmiany na właściwe projekty pracowni -->
+      <article class="card" data-cat="wnetrze">
+        <div class="ph ph--card"><span>Salon KEY<br>zdjęcie 4:5</span></div>
+        <div class="card-meta"><span class="card-loc">Salon KEY · Katowice</span><span class="card-type">Wnętrze</span></div>
+      </article>
+      <article class="card" data-cat="przebudowa">
+        <div class="ph ph--card"><span>Przebudowa domu z lat 60.<br>ul. Kukułek</span></div>
+        <div class="card-meta"><span class="card-loc">ul. Kukułek · Katowice</span><span class="card-type">Przebudowa</span></div>
+      </article>
+      <article class="card" data-cat="dom">
+        <div class="ph ph--card"><span>Dom jednorodzinny<br>zdjęcie 4:5</span></div>
+        <div class="card-meta"><span class="card-loc">Dom · Mikołów</span><span class="card-type">Dom</span></div>
+      </article>
+      <article class="card" data-cat="obiekt">
+        <div class="ph ph--card"><span>Obiekt użyteczności publicznej<br>zdjęcie 4:5</span></div>
+        <div class="card-meta"><span class="card-loc">Obiekt · Katowice</span><span class="card-type">Obiekt</span></div>
+      </article>
+      <article class="card" data-cat="przebudowa">
+        <div class="ph ph--card"><span>Przebudowa domu z lat 50.<br>ul. Kukułek</span></div>
+        <div class="card-meta"><span class="card-loc">ul. Kukułek · Katowice</span><span class="card-type">Przebudowa</span></div>
+      </article>
+      <article class="card" data-cat="dom">
+        <div class="ph ph--card"><span>Budynek wielorodzinny<br>zdjęcie 4:5</span></div>
+        <div class="card-meta"><span class="card-loc">Budynek · Tychy</span><span class="card-type">Dom</span></div>
+      </article>
+      <article class="card" data-cat="wnetrze">
+        <div class="ph ph--card"><span>Wnętrze domu<br>zdjęcie 4:5</span></div>
+        <div class="card-meta"><span class="card-loc">Wnętrze · Gliwice</span><span class="card-type">Wnętrze</span></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="wrap works-foot reveal">
+    <a href="#kontakt" class="line-link">Zapytaj o podobny projekt <span aria-hidden="true">↘</span></a>
+  </div>
+</section>
+
+<!-- ============ PRZERYWNIK 1 ============ -->
+<section class="interlude" aria-label="Przerywnik">
+  <div class="ph ph--interlude"><span>Przerywnik 1 — wideo / animacja AI (pełna szerokość, 21:9)<br>np. przejście światła po elewacji, dzień → wieczór</span></div>
+  <div class="interlude-copy">
+    <p class="interlude-quote">„Dobry budynek zaczyna się od miejsca, w którym stoi.”</p>
+  </div>
+</section>
+
+<!-- ============ 03 PRZEBUDOWY (wyróżniony case) ============ -->
+<section class="section feature" id="przebudowy">
+  <div class="wrap">
+    <p class="label reveal"><span>03</span> Przebudowy</p>
+    <div class="feature-head">
+      <h2 class="display reveal">Nowe życie domów<br>z lat 50. i 60.</h2>
+      <p class="lead reveal">Seria przebudów przy ul. Kukułek w Katowicach. Pokazujemy nie tylko efekt, ale też to, co zmieniliśmy w budynku — i dlaczego.</p>
+    </div>
+
+    <div class="compare reveal" data-compare>
+      <div class="compare-after"><div class="ph ph--wide"><span>PO — zdjęcie po przebudowie (16:9)</span></div></div>
+      <div class="compare-before"><div class="ph ph--wide ph--dark"><span>PRZED — zdjęcie stanu istniejącego (16:9)</span></div></div>
+      <span class="compare-tag compare-tag--l">Przed</span>
+      <span class="compare-tag compare-tag--r">Po</span>
+      <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Porównaj stan przed i po przebudowie">
+      <span class="compare-handle" aria-hidden="true"></span>
+    </div>
+
+    <div class="changes">
+      <div class="change reveal"><span class="num">01</span><h3>Bryła</h3><p>Zachowana skala i charakter zabudowy osiedla, nowa geometria dachu i przemyślane doświetlenie poddasza.</p></div>
+      <div class="change reveal"><span class="num">02</span><h3>Układ</h3><p>Otwarta strefa dzienna w miejscu ciasnych pokoi, nowe połączenie domu z ogrodem.</p></div>
+      <div class="change reveal"><span class="num">03</span><h3>Elewacja</h3><p>Ocieplenie i nowe materiały dobrane tak, by dom wpisał się w sąsiedztwo, a nie z nim konkurował.</p></div>
+      <div class="change reveal"><span class="num">04</span><h3>Formalności</h3><p>Inwentaryzacja, projekt przebudowy, uzgodnienia i pozwolenie na budowę po stronie pracowni.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 OFERTA ============ -->
+<section class="section offer" id="oferta">
+  <div class="wrap">
+    <div class="offer-head">
+      <div>
+        <p class="label reveal"><span>04</span> Oferta</p>
+        <h2 class="display reveal">Zakres pracy<br>dopasowany do inwestycji.</h2>
+      </div>
+      <p class="reveal">Od jednej konsultacji po kompletny projekt z nadzorem. Każdy temat prowadzi architekt, z którym rozmawiasz od początku.</p>
+    </div>
+    <ul class="offer-list">
+      <li class="offer-item reveal">
+        <span class="num">01</span>
+        <h3>Domy jednorodzinne</h3>
+        <p>Projekty indywidualne dopasowane do działki, budżetu i sposobu życia. Koncepcja, projekt budowlany, wykonawczy.</p>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="offer-item reveal">
+        <span class="num">02</span>
+        <h3>Przebudowy i rozbudowy</h3>
+        <p>Inwentaryzacja, analiza możliwości budynku, projekt przebudowy, nadbudowy lub zmiany sposobu użytkowania.</p>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="offer-item reveal">
+        <span class="num">03</span>
+        <h3>Budynki wielorodzinne i użyteczności publicznej</h3>
+        <p>Obiekty mieszkaniowe, usługowe i publiczne — z pełną koordynacją branż i uzgodnieniami.</p>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="offer-item reveal">
+        <span class="num">04</span>
+        <h3>Wnętrza</h3>
+        <p>Kompleksowe aranżacje wnętrz domów, mieszkań i lokali usługowych — spójne z architekturą budynku.</p>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </li>
+      <li class="offer-item reveal">
+        <span class="num">05</span>
+        <h3>Nadzór autorski</h3>
+        <p>Obecność architekta na budowie, odpowiedzi na pytania wykonawców i kontrola zgodności z projektem.</p>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 05 PROCES (split jak u M. Serbisty) ============ -->
+<section class="process">
+  <div class="process-media">
+    <div class="ph ph--fill"><span>Przerywnik 2 — zdjęcie / animacja AI<br>(cień, szkic, makieta — pionowo)</span></div>
+  </div>
+  <div class="process-copy">
+    <p class="label reveal"><span>05</span> Proces</p>
+    <h2 class="display reveal">Od rozmowy<br>do budynku.</h2>
+    <ol class="steps">
+      <li class="reveal"><span class="num">01</span><div><h3>Rozmowa</h3><p>Poznajemy działkę lub budynek, potrzeby, budżet i oczekiwany termin.</p></div></li>
+      <li class="reveal"><span class="num">02</span><div><h3>Koncepcja</h3><p>Układ funkcjonalny, bryła i pierwsze wizualizacje do wspólnego omówienia.</p></div></li>
+      <li class="reveal"><span class="num">03</span><div><h3>Projekt</h3><p>Projekt budowlany z uzgodnieniami, a następnie projekt wykonawczy.</p></div></li>
+      <li class="reveal"><span class="num">04</span><div><h3>Budowa</h3><p>Nadzór autorski — projekt przechodzi z papieru na plac budowy bez zgubionych decyzji.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PRZERYWNIK 3 ============ -->
+<section class="interlude interlude--short" aria-label="Przerywnik">
+  <div class="ph ph--interlude"><span>Przerywnik 3 — panorama Katowic / detal architektoniczny (21:9)</span></div>
+</section>
+
+<!-- ============ 06 KONTAKT ============ -->
+<section class="section contact" id="kontakt">
+  <div class="wrap">
+    <p class="label reveal"><span>06</span> Kontakt</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 class="display reveal">Opowiedz nam<br>o swoim miejscu.</h2>
+        <p class="lead reveal">Kilka zdań o działce lub budynku wystarczy, żeby zacząć rozmowę. Odpowiadamy w ciągu dwóch dni roboczych.</p>
+        <dl class="contact-list reveal">
+          <div><dt>Telefon</dt><dd><a href="tel:+48507061155">+48 507 061 155</a><br><a href="tel:+48327037025">32 703 70 25</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a></dd></div>
+          <div><dt>Pracownia</dt><dd>Plac Wolności 10A/2A<br>40-078 Katowice</dd></div>
+          <div><dt>Social</dt><dd><a href="https://www.facebook.com/architekci.kp" target="_blank" rel="noopener">Facebook ↗</a></dd></div>
+        </dl>
+      </div>
+
+      <form class="brief reveal" action="#" method="post" novalidate>
+        <fieldset class="chips">
+          <legend>Czego dotyczy projekt?</legend>
+          <label><input type="radio" name="typ" value="Dom jednorodzinny" checked><span>Dom</span></label>
+          <label><input type="radio" name="typ" value="Przebudowa"><span>Przebudowa</span></label>
+          <label><input type="radio" name="typ" value="Budynek / obiekt"><span>Budynek / obiekt</span></label>
+          <label><input type="radio" name="typ" value="Wnętrze"><span>Wnętrze</span></label>
+        </fieldset>
+        <div class="field-row">
+          <label class="field"><span>Imię i nazwisko</span><input type="text" name="name" autocomplete="name" required></label>
+          <label class="field"><span>Telefon lub e-mail</span><input type="text" name="contact" autocomplete="email" required></label>
+        </div>
+        <label class="field"><span>Lokalizacja inwestycji</span><input type="text" name="location" placeholder="np. Katowice, Ligota"></label>
+        <label class="field"><span>Kilka słów o projekcie</span><textarea name="message" rows="4"></textarea></label>
+        <label class="consent"><input type="checkbox" name="consent" required><span>Wyrażam zgodę na kontakt w sprawie przesłanego zapytania.</span></label>
+        <button type="submit" class="btn btn--dark">Wyślij zapytanie <span aria-hidden="true">↗</span></button>
+        <p class="form-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAPA / LOKALIZACJA ============ -->
+<section class="map" aria-label="Lokalizacja pracowni">
+  <div class="ph ph--map"><span>Mapa — Plac Wolności 10A, Katowice (stylizowana, szaro-beżowa)</span></div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="footer-wm">Architekci KP</span>
+      <p>Pracownia architektoniczna<br>mgr inż. arch. Aleksandra Grundszok-Duda</p>
+    </div>
+    <div>
+      <h4>Pracownia</h4>
+      <p>Plac Wolności 10A/2A<br>40-078 Katowice</p>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p><a href="tel:+48507061155">+48 507 061 155</a><br><a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a></p>
+    </div>
+    <div>
+      <h4>Menu</h4>
+      <p><a href="#pracownia">Pracownia</a><br><a href="#realizacje">Realizacje</a><br><a href="#oferta">Oferta</a><br><a href="#kontakt">Kontakt</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span data-year>2026</span> Architekci KP</span>
+    <a href="#top">Wróć na górę ↑</a>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
