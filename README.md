@@ -1,21 +1,21 @@
-# Architekci KP — koncepcja high-end (iteracja 3)
+# Architekci KP — high-end redesign (iteracja 4)
 
-Autorska, statyczna strona 21project. Obecne hero i przełącznik dzień/noc pozostają dokładnie bez zmian. Sekcje pod nim zostały uproszczone zgodnie z ostatnimi uwagami klienta:
+Aktualny zakres: **niezmienione hero → O nas → Nasze realizacje → Oferta → Wybrani inwestorzy → Kontakt**.
 
-- **O nas:** tylko duży nagłówek i opis po lewej; po prawej celowo puste miejsce na zdjęcie.
-- **Nasze realizacje:** duże kwadratowe kafle „DO UZUPEŁNIENIA”, bez podpisów ani kategorii, branding „ARCHITEKCI KP” wyłącznie po najechaniu. Karuzela przesuwa się płynnie w pętli, bez skoków lub pauz. Strzałki chwilowo przyspieszają ruch w wybranym kierunku.
-- **Oferta:** sześć kart z wizualizacjami i krótkimi opisami: domy, przebudowy, kamienice, analiza chłonności terenu, usługi (w tym salony samochodowe) i wnętrza.
+## O nas
+Mniejszy, niepogrubiony nagłówek wyśrodkowany nad szerszym tekstem. Zdjęcie nadal jest tylko placeholderem. Na desktopie sekcja jest ograniczona do wysokości jednego ekranu po odjęciu nawigacji; na telefonie układa się naturalnie w pionie.
 
-## Grafiki w ofercie
+## Nasze realizacje
+Pięć kwadratowych placeholderów, bez podpisów i bez strzałek. Płynny ruch w nieskończonej pętli, z nazwą ARCHITEKCI KP po najechaniu. Obsługa przeciągania myszą/dotykiem. Szanowanie prefers-reduced-motion.
 
-Trzy obrazy są prawdziwymi realizacjami z wcześniej dodanych materiałów pracowni: dom w Żorach, przebudowa domu w Orzeszu, salon samochodowy KIA. Trzy dodatkowe obrazy (kamienice, analiza terenu, wnętrza) są **samodzielnie przygotowanymi ilustracjami koncepcyjnymi SVG**, a nie fotografiami. Pozwalają już obejrzeć gotowy układ, ale docelowo powinny zostać zastąpione zatwierdzonymi zdjęciami lub renderami (np. generowanymi wizualizacjami fotorealistycznymi). Zdjęcie O nas jest celowo puste.
+## Oferta
+Trzy proste białe karty inspirowane referencyjnym zrzutem: **Architektura, Wnętrza, Analizy i doradztwo**, z numerem, opisem, zakresem i linkiem kontaktowym. Brak fotografii, cennika i pogrubionych nagłówków.
+
+## Wybrani inwestorzy
+Niekończący się poziomy pasek marek, które pracownia wymienia na stronie https://architekci-kp.pl/inwestorzy/ :
+ING Bank Śląski, KIA Komfi, AWF Katowice, Studio Moderna Polska, Euromedic, Rabis, MedStyle i Fayran. Do KIA podpięto lokalny znak SVG, a do ING aktualny plik graficzny z biura prasowego (Prowly). Pozostałe firmy są prezentowane typograficznymi nazwami zamiast niezweryfikowanych znaków graficznych. Zanim klient opublikuje wersję produkcyjną, należy potwierdzić uprawnienia do użycia znaków towarowych.
 
 ## Uruchomienie
+`npm run dev`, `npm run check`, `npm run build`.
 
-- `npm run dev` — podgląd pod http://127.0.0.1:4173
-- `npm run check` — walidacja struktury, odnośników i plików
-- `npm run build` — generuje statyczne `dist/` wraz z `premium-v2.css`
-
-Node.js 20+, bez zależności zewnętrznych. `noindex,nofollow` pozostaje włączone, bo to wersja koncepcyjna.
-
-Treści o pracowni zostały skrócone na podstawie oficjalnej strony: https://architekci-kp.pl/o-nas/.
+To nadal wersja koncepcyjna z meta `noindex,nofollow`.

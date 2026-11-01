@@ -45,33 +45,54 @@ function setHeroTime(time) {
 }
 timeButtons.forEach(button => button.addEventListener('click', () => setHeroTime(button.dataset.heroTime)));
 
-// Jednostajny, zapętlony ruch 1:1 bez snapowania lub skoków.
-const viewport = document.querySelector('[data-project-slider]');
-if(viewport){
- const track=viewport.querySelector('[data-work-track]'),first=viewport.querySelector('[data-work-original]');
- const second=first.cloneNode(true);second.removeAttribute('data-work-original');second.setAttribute('aria-hidden','true');track.append(second);
- let width=0,offset=0,last=0,direction=1,boost=0,drag=false,lastX=0;
- const measure=()=>{const gap=parseFloat(getComputedStyle(track).gap)||0;width=first.getBoundingClientRect().width+gap;if(width)offset=((offset%width)+width)%width;track.style.transform='translate3d('+(-offset)+'px,0,0)'};
- new ResizeObserver(measure).observe(first);measure();
- const steer=dir=>{direction=dir;boost=performance.now()+1900};
- document.querySelector('[data-slide-prev]')?.addEventListener('click',()=>steer(-1));
- document.querySelector('[data-slide-next]')?.addEventListener('click',()=>steer(1));
- viewport.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;drag=true;lastX=e.clientX;try{viewport.setPointerCapture(e.pointerId)}catch(_){}});
- viewport.addEventListener('pointermove',e=>{if(!drag||!width)return;offset=((offset-(e.clientX-lastX))%width+width)%width;lastX=e.clientX;track.style.transform='translate3d('+(-offset)+'px,0,0)'});
- viewport.addEventListener('pointerup',()=>drag=false);viewport.addEventListener('pointercancel',()=>drag=false);
+// Płynne, zapętlone pasy bez przeskoków. Dla osób z ograniczonym ruchem pasy pozostają nieruchome.
+function createContinuousMarquee(selector,trackSelector,groupSelector,speed) {
+ const viewport=document.querySelector(selector);
+ if(!viewport)return;
+ const track=viewport.querySelector(trackSelector),original=viewport.querySelector(groupSelector);
+ if(!track||!original)return;
+ const clone=original.cloneNode(true);
+ clone.removeAttribute(groupSelector.startsWith('[')?groupSelector.slice(1,-1):groupSelector);
+ clone.setAttribute('aria-hidden','true');
+ track.append(clone);
+ let width=0,offset=0,last=0,dragging=false,lastX=0;
+ const measure=()=>{
+  const gap=parseFloat(getComputedStyle(track).columnGap)||0;
+  width=original.getBoundingClientRect().width+gap;
+  if(width)offset=((offset%width)+width)%width;
+  track.style.transform='translate3d('+(-offset)+'px,0,0)';
+ };
+ if('ResizeObserver' in window)new ResizeObserver(measure).observe(original);
+ else window.addEventListener('resize',measure);
+ measure();
+ if(selector==='[data-project-slider]'){
+  viewport.addEventListener('pointerdown',event=>{
+   if(event.pointerType==='mouse'&&event.button!==0)return;
+   dragging=true;lastX=event.clientX;
+   try{viewport.setPointerCapture(event.pointerId)}catch(_){}
+  });
+  viewport.addEventListener('pointermove',event=>{
+   if(!dragging||!width)return;
+   offset=((offset-(event.clientX-lastX))%width+width)%width;
+   lastX=event.clientX;
+   track.style.transform='translate3d('+(-offset)+'px,0,0)';
+  });
+  viewport.addEventListener('pointerup',()=>dragging=false);
+  viewport.addEventListener('pointercancel',()=>dragging=false);
+ }
  function frame(now){
   if(!last)last=now;
   const dt=Math.min((now-last)/1000,.05);last=now;
-  if(width&&!drag&&!reduceMotion.matches&&!document.hidden){
-   const boosted=now<boost;
-   const speed=boosted?230:(window.innerWidth<761?30:43);
-   offset=((offset+direction*speed*dt)%width+width)%width;
+  if(width&&!dragging&&!reduceMotion.matches&&!document.hidden){
+   offset=(offset+speed*dt)%width;
    track.style.transform='translate3d('+(-offset)+'px,0,0)';
-   if(!boosted&&direction<0)direction=1;
   }
   requestAnimationFrame(frame);
  }
  requestAnimationFrame(frame);
 }
+createContinuousMarquee('[data-project-slider]','[data-work-track]','[data-work-original]',44);
+createContinuousMarquee('[data-investor-marquee]','[data-investor-track]','[data-investor-original]',34);
+
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());

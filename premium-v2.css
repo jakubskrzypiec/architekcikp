@@ -1,38 +1,56 @@
-/* Premium redesign of sections beneath preserved hero */
-.lux-about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,8vw,140px);align-items:center;min-height:720px;padding-top:clamp(110px,11vw,190px);padding-bottom:clamp(110px,11vw,190px);background:#faf9f6}
-.lux-about-copy{max-width:640px}.lux-about h2{font:500 clamp(72px,8vw,140px)/1.02 Manrope,Arial,sans-serif;letter-spacing:-.085em;color:#171717;margin:0 0 46px}
-.lux-about-copy p{max-width:600px;font:400 clamp(13px,1vw,16px)/2 Manrope,Arial,sans-serif;color:#393936;letter-spacing:-.012em}
-.lux-about-photo{width:100%;aspect-ratio:4/5;display:grid;place-items:center;background:#e8e7e2;border:1px solid #e1e0da}
-.lux-about-photo span{font:500 10px/1.3 Manrope,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8c8b84}
-.lux-work{padding:clamp(75px,8vw,140px) 0 clamp(92px,9vw,150px);background:#f2f1ed;overflow:hidden}
-.lux-section-header.section-pad{padding-top:0;padding-bottom:clamp(40px,5vw,82px);display:flex;justify-content:space-between;align-items:center;gap:32px}
-.lux-section-header h2,.lux-offer h2{font:500 clamp(54px,6.6vw,108px)/1.08 Manrope,Arial,sans-serif;letter-spacing:-.078em;color:#181818}
-.lux-slider-nav{display:flex;gap:10px;flex-shrink:0}
-.lux-slider-nav button{width:58px;height:58px;border:1px solid #a7a7a0;background:transparent;font-size:24px;transition:color .25s,background .25s}
-.lux-slider-nav button:hover{background:#171717;color:#fff}
+/* Architekci KP — high-end minimalistyczne sekcje pod niezmienionym hero */
+.lux-about.section-pad{min-height:calc(100svh - 88px);display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);gap:clamp(55px,6vw,120px);align-items:center;padding-top:clamp(35px,5vh,65px);padding-bottom:clamp(35px,5vh,65px);background:#faf9f6}
+.lux-about-copy{width:100%;max-width:720px}
+.lux-about h2{font:400 clamp(38px,4vw,65px)/1.17 Manrope,Arial,sans-serif;letter-spacing:-.065em;color:#191918;text-align:center;margin:0 0 clamp(22px,3vh,38px)}
+.lux-about-copy p{max-width:720px;font:400 clamp(14px,1.04vw,17px)/1.82 Manrope,Arial,sans-serif;letter-spacing:-.008em;color:#373733}
+.lux-about-photo{width:100%;height:min(59svh,540px);min-height:300px;max-height:calc(100svh - 190px);display:grid;place-items:center;background:#eeede9;border:1px solid #e4e3de}
+.lux-about-photo span{font:400 10px/1.5 Manrope,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#898882}
+.lux-work{padding:clamp(76px,8vw,140px) 0 clamp(90px,9vw,150px);background:#f2f1ed;overflow:hidden}
+.lux-section-header.section-pad{padding-top:0;padding-bottom:clamp(35px,5vw,78px);display:block}
+.lux-section-header h2,.lux-offer h2,.investors-band h2{font:400 clamp(40px,5vw,76px)/1.15 Manrope,Arial,sans-serif;letter-spacing:-.06em;color:#191918}
 .lux-work-viewport{overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none}
 .lux-work-viewport:active{cursor:grabbing}
 .lux-work-track{display:flex;width:max-content;gap:clamp(12px,1.2vw,22px);will-change:transform}
 .lux-work-group{display:flex;gap:clamp(12px,1.2vw,22px);flex-shrink:0}
-.lux-project{width:clamp(290px,34vw,630px);aspect-ratio:1;position:relative;overflow:hidden;flex-shrink:0;background:#e3e2dc}
-.lux-project:nth-child(2n){background:#e9e8e3}.lux-project:nth-child(3n){background:#dcdcd6}
-.lux-project-placeholder{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(10px,.8vw,13px);font-weight:500;letter-spacing:.12em;color:#9b9a93}
-.lux-project-overlay{position:absolute;inset:0;display:grid;place-items:center;background:#161616d9;color:#fff;font-size:clamp(27px,3vw,50px);font-weight:700;letter-spacing:-.07em;opacity:0;transition:opacity .4s}
+.lux-project{width:clamp(320px,34vw,640px);aspect-ratio:1;position:relative;overflow:hidden;flex-shrink:0;background:#e4e3dd}
+.lux-project:nth-child(2n){background:#eae9e4}.lux-project:nth-child(3n){background:#dcddd7}
+.lux-project-placeholder{position:absolute;inset:0;display:grid;place-items:center;font:400 clamp(10px,.82vw,13px)/1.4 Manrope,Arial,sans-serif;letter-spacing:.12em;color:#93938b}
+.lux-project-overlay{position:absolute;inset:0;display:grid;place-items:center;background:#161616dc;color:#fff;font:500 clamp(26px,3vw,50px)/1.1 Manrope,Arial,sans-serif;letter-spacing:-.055em;opacity:0;transition:opacity .45s}
 .lux-project:hover .lux-project-overlay{opacity:1}
-.lux-offer{background:#fff;padding-top:clamp(90px,10vw,175px);padding-bottom:clamp(90px,11vw,175px)}
-.lux-offer h2{margin:0 0 clamp(45px,6vw,85px)}
-.lux-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(45px,5vw,90px) clamp(18px,2.2vw,42px)}
-.lux-offer-card{min-width:0}.lux-offer-media{width:100%;aspect-ratio:1/1.08;overflow:hidden;background:#e6e5df}
-.lux-offer-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
-.lux-offer-card:hover img{transform:scale(1.045)}
-.lux-offer-card h3{margin:20px 0 8px;font:600 clamp(19px,1.6vw,28px)/1.3 Manrope,Arial,sans-serif;letter-spacing:-.045em;color:#171717}
-.lux-offer-card p{font:400 clamp(11px,.8vw,13px)/1.8 Manrope,Arial,sans-serif;color:#595955;max-width:420px}
+.lux-offer.section-pad{background:#f3f2ef;padding-top:clamp(88px,9vw,145px);padding-bottom:clamp(96px,11vw,165px)}
+.lux-offer h2{margin:0 0 clamp(38px,4.5vw,70px)}
+.premium-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.6vw,30px);align-items:stretch}
+.premium-offer-card{background:#fff;padding:clamp(28px,2.2vw,43px);min-width:0;min-height:clamp(550px,39vw,660px);display:flex;flex-direction:column;border:1px solid #ededea;transition:transform .38s,border-color .38s,box-shadow .38s}
+.premium-offer-card:hover{transform:translateY(-7px);border-color:#dddcd7;box-shadow:0 18px 52px rgba(0,0,0,.045)}
+.premium-offer-index{font:400 clamp(24px,2vw,36px)/1 Manrope,Arial,sans-serif;letter-spacing:.21em;color:#141414}
+.premium-offer-card h3{font:400 clamp(15px,1.1vw,19px)/1.45 Manrope,Arial,sans-serif;letter-spacing:.09em;color:#161615;margin:30px 0 34px;text-transform:uppercase;min-height:2.8em}
+.premium-offer-intro{font:400 clamp(12px,.85vw,14px)/1.85 Manrope,Arial,sans-serif;color:#666660;min-height:6em}
+.premium-offer-card ul{list-style:none;margin:34px 0 42px;padding:0;display:grid;gap:17px}
+.premium-offer-card li{position:relative;padding-left:22px;font:400 clamp(12px,.83vw,14px)/1.65 Manrope,Arial,sans-serif;color:#54544f}
+.premium-offer-card li:before{content:'';position:absolute;left:0;top:.72em;width:4px;height:4px;border-radius:50%;background:#7a7a74}
+.premium-offer-link{display:block;width:fit-content;margin-top:auto;padding-bottom:7px;border-bottom:1px solid #292925;font:500 10px/1.4 Manrope,Arial,sans-serif;letter-spacing:.13em;color:#292925;transition:opacity .2s}
+.premium-offer-link:hover{opacity:.6}
+.investors-band{padding:clamp(70px,7vw,120px) 0 clamp(75px,8vw,135px);overflow:hidden;background:#fff;border-top:1px solid #ecebe7}
+.investors-band-head.section-pad{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding-top:0;padding-bottom:clamp(26px,3vw,53px)}
+.investors-band-head p{font:400 12px/1.8 Manrope,Arial,sans-serif;color:#66645e;padding-bottom:9px}
+.investors-marquee{overflow:hidden;position:relative;width:100%}
+.investors-track{display:flex;width:max-content;gap:16px;will-change:transform;align-items:center}
+.investors-group{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.investor-logo-cell{width:clamp(190px,15vw,280px);height:112px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:18px 23px;filter:grayscale(1);opacity:.72;transition:filter .3s,opacity .3s}
+.investor-logo-cell:hover{filter:grayscale(0);opacity:1}
+.investor-logo-cell .brand-logo{max-width:100%;max-height:66px;width:auto;height:auto;object-fit:contain}
+.investor-logo-cell .brand-ing{max-height:92px}
+.investor-logo-cell .brand-kia{width:130px;height:53px}
+.investor-type{font:500 24px/1.2 Manrope,Arial,sans-serif;letter-spacing:-.065em;white-space:nowrap;color:#1d1c1b}
+.investor-awf{font-weight:600;font-size:28px;letter-spacing:-.045em}.investor-awf small{display:block;font-size:10px;letter-spacing:.24em;text-align:center}
+.investor-moderna{font-size:19px;font-weight:500}.investor-euromedic{font-size:19px;letter-spacing:.025em}
+.investor-rabis{font-size:29px;letter-spacing:.09em}.investor-medstyle{font-size:24px;letter-spacing:-.025em}.investor-fayran{font-size:22px;letter-spacing:.14em}
+.contact-strip h2{font-weight:400!important;letter-spacing:-.065em}
+.contact-strip h2 span{color:inherit}
 @media(min-width:1700px){.lux-about.section-pad,.lux-offer.section-pad{padding-left:var(--pad);padding-right:var(--pad)}}
-@media(max-width:1000px){.lux-about{gap:40px;min-height:0}.lux-about h2{font-size:clamp(62px,7vw,88px)}.lux-offer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:55px 25px}.lux-project{width:50vw}}
-@media(max-width:760px){.lux-about{grid-template-columns:1fr;gap:43px;padding-top:90px;padding-bottom:90px}.lux-about h2{font-size:clamp(66px,15vw,100px);margin-bottom:27px}.lux-about-copy p{font-size:13px;line-height:1.95}.lux-about-photo{aspect-ratio:4/4.2}
-.lux-section-header.section-pad{padding-bottom:35px}.lux-section-header h2,.lux-offer h2{font-size:clamp(44px,10vw,70px)}
-.lux-slider-nav{gap:7px}.lux-slider-nav button{width:43px;height:43px;font-size:19px}
-.lux-work{padding-top:86px;padding-bottom:86px}.lux-project{width:78vw}
-.lux-offer{padding-top:90px;padding-bottom:95px}.lux-offer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 15px}.lux-offer-card h3{font-size:18px;margin-top:15px}.lux-offer-card p{font-size:11px}}
-@media(max-width:480px){.lux-section-header.section-pad{gap:12px}.lux-section-header h2{font-size:clamp(36px,10vw,48px)}.lux-slider-nav button{width:38px;height:38px}.lux-offer-grid{grid-template-columns:1fr;gap:40px}.lux-offer-media{aspect-ratio:1.2}.lux-offer-card h3{font-size:24px}.lux-offer-card p{font-size:12px}}
-@media(prefers-reduced-motion:reduce){.lux-project-overlay,.lux-offer-media img{transition:none!important}}
+@media(max-width:1100px){.lux-about.section-pad{gap:40px}.lux-about-copy p{font-size:14px;line-height:1.7}.lux-offer .premium-offer-card{padding:28px 24px;min-height:615px}}
+@media(max-width:840px){.lux-about.section-pad{min-height:0;grid-template-columns:1fr;gap:44px;padding-top:74px;padding-bottom:74px}.lux-about-copy{max-width:none}.lux-about h2{text-align:left;font-size:51px;margin-bottom:25px}.lux-about-copy p{font-size:14px;line-height:1.85}.lux-about-photo{height:auto;max-height:none;min-height:0;aspect-ratio:4/3}
+.premium-offer-grid{grid-template-columns:1fr;gap:15px}.premium-offer-card{min-height:0!important;padding:30px}.premium-offer-card h3{min-height:0;margin:25px 0}.premium-offer-intro{min-height:0}.premium-offer-card ul{margin:26px 0 36px}
+.investors-band-head.section-pad{align-items:flex-start;flex-direction:column;gap:12px}}
+@media(max-width:760px){.lux-work{padding-top:75px;padding-bottom:80px}.lux-section-header h2,.lux-offer h2,.investors-band h2{font-size:clamp(38px,10vw,58px)}.lux-project{width:82vw}.investor-logo-cell{width:200px;height:92px}.investors-band-head p{padding:0}}
+@media(prefers-reduced-motion:reduce){.lux-project-overlay,.premium-offer-card,.investor-logo-cell{transition:none!important}}

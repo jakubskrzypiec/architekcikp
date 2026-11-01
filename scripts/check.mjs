@@ -16,7 +16,8 @@ for (const match of css.matchAll(/url\(['"]?([^)'" ]+)['"]?\)/g)) await access(m
 assert(html.includes('noindex,nofollow'), 'Draft must not be indexed');
 assert(html.includes('class="hero hero-v2"'), 'Hero must remain present');
 assert.equal((html.match(/class="lux-project"/g) || []).length, 5, 'Expected 5 project placeholders');
-assert.equal((html.match(/class="lux-offer-card reveal"/g) || []).length, 6, 'Expected 6 offer cards');
+assert.equal((html.match(/class="premium-offer-card reveal"/g) || []).length, 3, 'Expected 3 offer cards');
+assert(html.includes('id="inwestorzy"'), 'Investor band missing');
 assert(!html.includes('<em>'), 'No italic headings');
-assert(js.includes('requestAnimationFrame(frame)') && js.includes('setHeroTime'), 'Continuous slider and day/night interactions must be present');
+assert(js.includes('createContinuousMarquee') && js.includes('setHeroTime'), 'Continuous slider and day/night interactions must be present');
 console.log('Validated section anchors, assets, hero, placeholders and metadata.');
