@@ -1,7 +1,7 @@
 import { readFile, access } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const html = await readFile('index.html', 'utf8');
-const css = await readFile('style.css', 'utf8') + await readFile('hero.css', 'utf8') + await readFile('premium-v2.css', 'utf8') + await readFile('color-theme.css', 'utf8');
+const css = await readFile('style.css', 'utf8') + await readFile('hero.css', 'utf8') + await readFile('premium-v2.css', 'utf8');
 const js = await readFile('app.js', 'utf8');
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 assert.equal(new Set(ids).size, ids.length, 'IDs must be unique');

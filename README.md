@@ -4,8 +4,6 @@ Statyczny projekt strony pracowni Architekci KP. Układ sekcji: hero, O nas, Nas
 
 ## Aktualna wersja
 
-- Kolorystyka: ciepła złamana biel i piaskowe tło realizacji, szałwiowa oferta, ciemnozielona sekcja kontaktu i stopka oraz jasnopiaskowy formularz. Przyciski łączą ciemną zieleń z kremowym kolorem; hover nawigacji ma delikatny akcent terakoty. Typografia pozostaje prosta, bez kursywy. Paleta znajduje się w `color-theme.css`.
-
 - Hero: kolorowy dzień i noc, nieruchomy budynek, napis za dachem, większy tekst po lewej. Chmury przemieszczają się w spokojniejszym, 42-sekundowym cyklu. Napis za budynkiem jest biały również w dzień; przyciski nie mają strzałek, dodatkowe zdanie usunięto. Kontakt w nawigacji jest zwykłym odnośnikiem.
 - Sześć tytułów sekcji używa jednej klasy `section-title`: Manrope 400, ten sam responsywny rozmiar i interlinia, bez pogrubienia.
 - Przerywnik przedstawia wizualizację AI na podstawie projektu domu w Orzeszu. Pełna bryła mieści się w kadrze; hasło „Dobry projekt zaczyna się od Ciebie.” jest wyśrodkowane w pionie i poziomie, bez cienia, na mocno przyciemnionym tle. Budynek pozostaje nieruchomy, a niebo porusza się niezależnie w 95-sekundowym cyklu. Osobna, gęstsza tekstura nieba zachowuje kontrast bez rozjaśniającego mieszania. Maska chroni dom i roślinność. Wysokość jest dopasowana do szerokości ekranu (320–400 px na komputerze, 260 px na telefonie). Pochodzenie AI opisano w dokumentacji materiałów, bez podpisu w przerywniku. Preferencja ograniczonego ruchu zatrzymuje animację; bez obsługi maski wyświetla się statyczna wizualizacja.
