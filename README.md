@@ -19,3 +19,14 @@ ING Bank Śląski, KIA Komfi, AWF Katowice, Studio Moderna Polska, Euromedic, Ra
 `npm run dev`, `npm run check`, `npm run build`.
 
 To nadal wersja koncepcyjna z meta `noindex,nofollow`.
+
+
+## Iteracja 5 — przerywnik, kontakt, formularz, stopka
+
+- Pełnoekranowy przerywnik **między realizacjami a ofertą**. Używa lokalnej wizualizacji `assets/dom-zory.jpg`, przyciemnionego gradientu i minimalistycznej typografii; nie zmienia hero.
+- Po „Wybranych inwestorach” znajduje się sekcja **Kontakt** z oficjalnymi, zweryfikowanymi na `architekci-kp.pl/kontakt/` danymi: `architekci@architekci-kp.pl`, `+48 32 703 70 25`, `+48 507 061 155`, Plac Wolności 10A/2A, 40-078 Katowice.
+- Pod danymi znajduje się responsywny **formularz kontaktowy**. Formularz działa w czystym HTML i wysyła metodą POST do `https://formsubmit.co/architekci@architekci-kp.pl`. Ma wymagane imię/nazwisko, e-mail, kategorię i wiadomość; telefon jest opcjonalny. Dodano antyspamowy honeypot, reCAPTCHA po stronie dostawcy oraz informację o zewnętrznej usłudze.
+- **Przed produkcją konieczne:** właściciel skrzynki musi aktywować FormSubmit po pierwszej próbnej wysyłce, klikając link potwierdzający w wiadomości e-mail. Bez aktywacji nie można uważać formularza za uruchomiony. Dodatkowo należy przygotować/zweryfikować politykę prywatności i informacje RODO oraz zatwierdzić korzystanie z FormSubmit jako podmiotu zewnętrznego.
+- Nowa, ciemna **stopka premium** z nazwą pracowni, nawigacją, danymi, CTA do formularza, rokiem aktualizowanym automatycznie i dyskretnym podpisem 21project.
+
+Strona nadal ma `noindex,nofollow` jako projekt do zatwierdzenia.

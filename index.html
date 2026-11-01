@@ -91,6 +91,20 @@
         </div></div>
       </div>
     </section>
+    <!-- Przerywnik pełnoekranowy: oryginalna wizualizacja z portfolio pracowni -->
+    <section class="editorial-break" aria-labelledby="interlude-title">
+      <img class="editorial-break-image" src="assets/dom-zory.jpg" alt="Współczesny dom jednorodzinny — projekt pracowni Architekci KP" loading="lazy" decoding="async">
+      <div class="editorial-break-shade" aria-hidden="true"></div>
+      <div class="editorial-break-content">
+        <p class="editorial-break-kicker">ARCHITEKCI KP <span aria-hidden="true">/</span> PRACOWNIA ARCHITEKTONICZNA</p>
+        <h2 id="interlude-title">Architektura,<br>która trwa.</h2>
+        <div class="editorial-break-bottom">
+          <span>KATOWICE / OD 2005 ROKU</span>
+          <span>PRZESTRZEŃ MA ZNACZENIE</span>
+        </div>
+      </div>
+    </section>
+
     <section id="oferta" class="lux-offer section-pad" aria-labelledby="offer-title">
       <h2 id="offer-title" class="reveal">Oferta</h2>
       <div class="premium-offer-grid">
@@ -137,12 +151,69 @@
         </div>
       </div>
     </section>
-    <section class="contact-strip section-pad" id="kontakt" aria-labelledby="contact-title">
-      <p class="eyebrow reveal">Porozmawiajmy o Twojej inwestycji</p>
-      <div class="contact-strip-main reveal"><h2 id="contact-title">Stwórzmy coś<br><span>razem.</span></h2><a class="contact-big-link" href="mailto:architekci@architekci-kp.pl" aria-label="Napisz do Architekci KP">↗</a></div>
-      <div class="contact-strip-bottom reveal"><a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a><a href="tel:+48327037025">32 703 70 25</a><span>Katowice / Polska</span></div>
+    <!-- Kontakt: oficjalne dane pracowni -->
+    <section id="kontakt" class="contact-editorial section-pad" aria-labelledby="contact-title">
+      <div class="contact-editorial-top reveal">
+        <span class="contact-eyebrow">ARCHITEKCI KP / KATOWICE</span>
+        <h2 id="contact-title">Kontakt</h2>
+      </div>
+      <div class="contact-editorial-layout">
+        <div class="contact-editorial-intro reveal">
+          <p>Masz pomysł na dom, przebudowę lub nową przestrzeń? Porozmawiajmy o możliwościach Twojej inwestycji.</p>
+          <a class="contact-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Plac+Wolno%C5%9Bci+10A%2F2A%2C+40-078+Katowice" target="_blank" rel="noopener noreferrer">Zobacz lokalizację biura <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-editorial-details reveal">
+          <div class="contact-detail"><span class="contact-detail-label">E-mail</span><a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a></div>
+          <div class="contact-detail"><span class="contact-detail-label">Telefon</span><a href="tel:+48327037025">+48 32 703 70 25</a><a href="tel:+48507061155">+48 507 061 155</a></div>
+          <div class="contact-detail"><span class="contact-detail-label">Adres pracowni</span><address>Plac Wolności 10A/2A<br>40-078 Katowice</address></div>
+        </div>
+      </div>
     </section>
+
+    <!-- Formularz: natywna wysyłka do FormSubmit, aktywacja wymagana przez odbiorcę -->
+    <section class="contact-form-section section-pad" id="formularz" aria-labelledby="form-title">
+      <div class="contact-form-intro reveal">
+        <span class="contact-eyebrow">NOWA INWESTYCJA / ZAPYTANIE</span>
+        <h2 id="form-title">Napisz do nas.</h2>
+        <p>Opisz krótko swoją inwestycję. Skontaktujemy się z Tobą, aby omówić szczegóły i możliwości współpracy.</p>
+        <span class="form-intro-index" aria-hidden="true">ARCHITEKCI KP — 2005 / 2026</span>
+      </div>
+      <form class="contact-form reveal" action="https://formsubmit.co/architekci@architekci-kp.pl" method="POST" accept-charset="UTF-8">
+        <input type="hidden" name="_subject" value="Nowe zapytanie ze strony Architekci KP">
+        <input type="hidden" name="_template" value="table">
+        <div class="form-honeypot" aria-hidden="true"><label>Nie wypełniaj tego pola <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+        <div class="form-two-columns">
+          <div class="form-field"><label for="form-name">Imię i nazwisko <span aria-hidden="true">*</span></label><input id="form-name" name="name" type="text" autocomplete="name" placeholder="Jak możemy się do Ciebie zwracać?" maxlength="120" required></div>
+          <div class="form-field"><label for="form-email">Adres e-mail <span aria-hidden="true">*</span></label><input id="form-email" name="email" type="email" autocomplete="email" placeholder="twoj@email.pl" maxlength="160" required></div>
+        </div>
+        <div class="form-two-columns">
+          <div class="form-field"><label for="form-phone">Numer telefonu <span class="form-optional">(opcjonalnie)</span></label><input id="form-phone" name="phone" type="tel" autocomplete="tel" placeholder="+48 000 000 000" maxlength="40"></div>
+          <div class="form-field"><label for="form-type">Rodzaj projektu <span aria-hidden="true">*</span></label><select id="form-type" name="rodzaj_projektu" required><option value="" selected disabled>Wybierz kategorię</option><option value="Architektura / nowy budynek">Architektura / nowy budynek</option><option value="Przebudowa / modernizacja">Przebudowa / modernizacja</option><option value="Wnętrza">Wnętrza</option><option value="Analiza chłonności terenu">Analiza chłonności terenu</option><option value="Inna inwestycja">Inna inwestycja</option></select></div>
+        </div>
+        <div class="form-field form-field-message"><label for="form-message">Wiadomość <span aria-hidden="true">*</span></label><textarea id="form-message" name="message" rows="5" maxlength="4000" placeholder="Opowiedz nam o planowanym projekcie..." required></textarea></div>
+        <div class="form-submit-row">
+          <p class="form-privacy">Dane z formularza są przekazywane pracowni Architekci KP w celu odpowiedzi na zapytanie. Wysyłkę obsługuje zewnętrzna usługa FormSubmit.</p>
+          <button type="submit">Wyślij wiadomość <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </section>
+
   </main>
-  <footer class="site-footer"><a class="brand" href="#start"><img src="assets/logo-original.jpg" width="268" height="50" alt="Architekci KP — Grundszok Duda" loading="lazy"></a><p>© <span id="year">2026</span> Architekci KP</p><a href="#start">Do góry ↑</a><small>Wstępna koncepcja / 21project</small></footer>
+  <footer class="footer-premium" aria-label="Stopka Architekci KP">
+    <div class="footer-premium-main">
+      <div class="footer-brand-col">
+        <a href="#start" class="footer-wordmark" aria-label="Architekci KP — wróć na górę strony">ARCHITEKCI KP<span>GRUNDSZOK DUDA / KATOWICE</span></a>
+        <p>Architektura oparta na doświadczeniu, funkcji i zrozumieniu miejsca. Projektujemy od 2005 roku.</p>
+      </div>
+      <div class="footer-col"><h2>Nawigacja</h2><nav aria-label="Nawigacja w stopce"><a href="#pracownia">O nas</a><a href="#projekty">Realizacje</a><a href="#oferta">Oferta</a><a href="#inwestorzy">Inwestorzy</a><a href="#kontakt">Kontakt</a></nav></div>
+      <div class="footer-col"><h2>Kontakt</h2><a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a><a href="tel:+48327037025">+48 32 703 70 25</a><a href="tel:+48507061155">+48 507 061 155</a><address>Plac Wolności 10A/2A<br>40-078 Katowice</address></div>
+      <div class="footer-col footer-next-col"><h2>Porozmawiajmy</h2><p>Każda inwestycja zaczyna się od rozmowy.</p><a class="footer-next-link" href="#formularz">Przejdź do formularza <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="footer-premium-bottom">
+      <span>© <span id="year">2026</span> ARCHITEKCI KP. WSZELKIE PRAWA ZASTRZEŻONE.</span>
+      <a href="#start">WRÓĆ NA GÓRĘ ↑</a>
+      <a href="https://21project.pl/" target="_blank" rel="noopener noreferrer">PROJEKT I REALIZACJA: 21PROJECT</a>
+    </div>
+  </footer>
 </body>
 </html>
