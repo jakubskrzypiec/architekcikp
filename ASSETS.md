@@ -91,3 +91,11 @@ Karuzela zawiera 10 podmiotów: sześć oryginalnych znaków i cztery nazwy teks
 `assets/orzesze-ai.webp` wygenerowano wbudowanym narzędziem imagegen na podstawie `assets/orzesze.jpg`, z zachowaniem charakterystycznej bryły, układu okien i materiałów. To wizualizacja AI na podstawie projektu, nie fotografia realizacji. Plik ma 2172 × 724 px. `assets/orzesze-ai-foreground.webp` to wyodrębniona tym samym narzędziem warstwa domu i zieleni z przezroczystym niebem. Służy wyłącznie jako maska: strona pokazuje niezmienną pełną wizualizację, a maska ogranicza ruchome chmury do nieba. Zachowano kanał alfa, oba pliki skompresowano do WebP.
 
 Niebo korzysta z istniejącego `assets/hero-clouds.webp`. CSS przesuwa teksturę w 42-sekundowym cyklu. Sam budynek nie skaluje się ani nie przemieszcza. Pełne prompty: `orzesze-ai-prompts.txt`.
+
+### Aktualizacja nieba w przerywniku
+
+W przerywniku teksturę hero zastąpiono osobnym plikiem `assets/interlude-clouds.webp`, wygenerowanym wbudowanym narzędziem imagegen (2172 × 724 px, kompresja WebP). Gęstsze chmury mają naturalny kontrast; usunięto mieszanie screen, które wypłukiwało tło. Ruch zwolniono do 95 sekund. Maska nadal chroni nieruchomy dom i roślinność. Hero zachowuje dotychczasową teksturę.
+
+Prompt:
+
+> Use case: photorealistic-natural. Asset: extra-wide panoramic daytime sky background texture for an architectural website, aspect ratio 3:1. Only sky. Many generous clearly visible layered cumulus and stratocumulus clouds covering about 75 percent of the frame, softly sunlit ivory-white tops and cool medium-grey undersides, blue-grey open sky between them. Natural calm daylight, detailed three-dimensional cloud structure and sufficient tonal contrast to remain distinct when used behind a white modern house. Cloud forms distributed throughout the frame from top to bottom, with no blank white strip. Refined restrained natural blue and grey palette, brighter lower clouds, soft sunlight. No storm, no dramatic dark thunderclouds, no orange sunset, no horizon, no land, no buildings, no trees, no objects, no typography or watermark. Photographic realism, seamless-looking horizontal flow suitable for slow lateral motion.

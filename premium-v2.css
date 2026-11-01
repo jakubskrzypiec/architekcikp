@@ -391,3 +391,9 @@ main h2.section-title{font-size:32px;line-height:1.17;letter-spacing:-.045em;mar
 .interlude-center .interlude-heading{font-size:clamp(44px,5.5vw,80px);line-height:1.12;letter-spacing:-.045em;text-shadow:none}
 .interlude-photo-shade{background:linear-gradient(180deg,#15222d10,#10182070 50%,#15222d15)}
 @media(max-width:760px){.interlude-center .interlude-heading{font-size:clamp(34px,9vw,44px);max-width:340px}}
+/* Wyraźniejsze, gęstsze chmury i hasło nad domem. */
+.interlude-sky{background-image:url('assets/interlude-clouds.webp');background-color:#8da6ba;background-blend-mode:normal;background-size:160% 100%;animation-duration:95s;animation-timing-function:linear}
+.interlude-center{align-items:start;align-content:start;padding:28px 24px 0}
+.interlude-center .interlude-heading{font-size:clamp(32px,3.6vw,52px);line-height:1.12;max-width:850px;text-shadow:none;letter-spacing:-.045em}
+.interlude-photo-shade{background:linear-gradient(180deg,#10253675, #10253625 30%,transparent 58%)}
+@media(max-width:760px){.interlude-sky{background-size:auto 340px}.interlude-center{padding-top:24px}.interlude-center .interlude-heading{font-size:clamp(28px,7.4vw,34px);max-width:340px}.interlude-photo-shade{background:linear-gradient(180deg,#10253680,transparent 62%)}}
