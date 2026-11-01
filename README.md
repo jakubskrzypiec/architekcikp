@@ -1,36 +1,23 @@
-# Architekci KP — high-end redesign (iteracja 4)
+# Architekci KP — projekt strony
 
-Aktualny zakres: **niezmienione hero → O nas → Nasze realizacje → Oferta → Wybrani inwestorzy → Kontakt**.
+Statyczny projekt strony pracowni Architekci KP. Układ sekcji: hero, O nas, Nasze realizacje, niski przerywnik, Oferta, Wybrani inwestorzy, Kontakt, formularz i stopka.
 
-## O nas
-Mniejszy, niepogrubiony nagłówek wyśrodkowany nad szerszym tekstem. Zdjęcie nadal jest tylko placeholderem. Na desktopie sekcja jest ograniczona do wysokości jednego ekranu po odjęciu nawigacji; na telefonie układa się naturalnie w pionie.
+## Aktualna wersja
 
-## Nasze realizacje
-Pięć kwadratowych placeholderów, bez podpisów i bez strzałek. Płynny ruch w nieskończonej pętli, z nazwą ARCHITEKCI KP po najechaniu. Obsługa przeciągania myszą/dotykiem. Szanowanie prefers-reduced-motion.
+- Hero: kolorowy dzień i noc, nieruchomy budynek, napis za dachem, większy tekst po lewej. Chmury przemieszczają się wyraźniej, w 28-sekundowym cyklu. Kontakt w nawigacji jest zwykłym odnośnikiem.
+- Sześć tytułów sekcji używa jednej klasy `section-title`: Manrope 400, ten sam responsywny rozmiar i interlinia, bez pogrubienia.
+- Przerywnik ma 300 px wysokości na desktopie i 240 px na telefonie. Cytat pochodzi z komunikacji pracowni; tło tworzy subtelnie animowany rysunek architektoniczny.
+- Oferta: sześć zakresów (domy, przebudowy, kamienice, obiekty usługowe, wnętrza, analizy i doradztwo). Wybór myszą, dotykiem lub klawiaturą zmienia opis i podgląd prawdziwej realizacji z portfolio pracowni.
+- Inwestorzy: lokalne, autentyczne logotypy ING Banku Śląskiego, KIA Komfi, AWF Katowice i Euromedic, wybranych z oficjalnej listy pracowni. Oryginalne kolory, większy format, ciągła karuzela. Źródła podano w `ASSETS.md`.
+- Kontakt: trzy równe kafelki z e-mailem, telefonami i adresem.
+- Formularz: tylko imię i nazwisko, e-mail oraz wiadomość. Nadal demonstracyjny: bez endpointu, bez wysyłki i bez zapisu danych. Przycisk sprawdza pola i wyświetla informację, że wiadomość nie została wysłana.
 
-## Oferta
-Trzy proste białe karty inspirowane referencyjnym zrzutem: **Architektura, Wnętrza, Analizy i doradztwo**, z numerem, opisem, zakresem i linkiem kontaktowym. Brak fotografii, cennika i pogrubionych nagłówków.
+Karuzela realizacji (pięć placeholderów) i miejsce na zdjęcie w sekcji O nas pozostają zgodne z poprzednim zakresem. Animacje respektują `prefers-reduced-motion`. Nocna wizualizacja jest kolorowa.
 
-## Wybrani inwestorzy
-Niekończący się poziomy pasek marek, które pracownia wymienia na stronie https://architekci-kp.pl/inwestorzy/ :
-ING Bank Śląski, KIA Komfi, AWF Katowice, Studio Moderna Polska, Euromedic, Rabis, MedStyle i Fayran. Do KIA podpięto lokalny znak SVG, a do ING aktualny plik graficzny z biura prasowego (Prowly). Pozostałe firmy są prezentowane typograficznymi nazwami zamiast niezweryfikowanych znaków graficznych. Zanim klient opublikuje wersję produkcyjną, należy potwierdzić uprawnienia do użycia znaków towarowych.
+## Uruchomienie i sprawdzenie
 
-## Uruchomienie
-`npm run dev`, `npm run check`, `npm run build`.
+- `npm run dev` — lokalny podgląd http://127.0.0.1:4173
+- `npm run check` — zasoby, odnośniki, struktura i brak konfiguracji wysyłki formularza
+- `npm run build` — gotowa strona w `dist/`
 
-To nadal wersja koncepcyjna z meta `noindex,nofollow`.
-
-
-## Iteracja 5 — przerywnik, kontakt, formularz, stopka
-
-- Pełnoekranowy przerywnik **między realizacjami a ofertą**. Używa lokalnej wizualizacji `assets/dom-zory.jpg`, przyciemnionego gradientu i minimalistycznej typografii; nie zmienia hero.
-- Po „Wybranych inwestorach” znajduje się sekcja **Kontakt** z oficjalnymi, zweryfikowanymi na `architekci-kp.pl/kontakt/` danymi: `architekci@architekci-kp.pl`, `+48 32 703 70 25`, `+48 507 061 155`, Plac Wolności 10A/2A, 40-078 Katowice.
-- Pod danymi znajduje się responsywny **formularz demonstracyjny**, z polami imię i nazwisko, e-mail, telefon, rodzaj projektu i wiadomość. Nie ma zdefiniowanego odbiorcy, `action`, `method=POST` ani integracji z FormSubmit. Przycisk typu `button` jedynie sprawdza wymagane pola i wyświetla potwierdzenie, że **nic nie zostało wysłane**. Dodatkowy handler zapobiega przypadkowemu wysłaniu formularza Enterem. Dane nie są przechowywane.
-- Na etapie publikacji niezbędne będą świadomy wybór dostawcy formularzy, zgoda na integrację, test wysyłki oraz informacje RODO.
-- Nowa, ciemna **stopka premium** z nazwą pracowni, nawigacją, danymi, CTA do formularza, rokiem aktualizowanym automatycznie i dyskretnym podpisem 21project.
-
-Strona nadal ma `noindex,nofollow` jako projekt do zatwierdzenia.
-
-
-## Iteracja 6 — formularz bez wysyłki
-Na prośbę właściciela projektu usunięto integrację z FormSubmit i adres docelowy **wyłącznie z konfiguracji formularza**. Formularz pozostaje wyłącznie wizualnym demonstratorem i nie wysyła e-maili ani danych. Publiczne dane kontaktowe w sekcji Kontakt pozostają jako zwykłe odnośniki dla odwiedzających.
+Bez zależności npm. Projekt nadal ma `noindex,nofollow` jako koncepcja do zatwierdzenia.

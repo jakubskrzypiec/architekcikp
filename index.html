@@ -25,7 +25,7 @@
       <a href="#pracownia">O nas</a>
       <a href="#projekty">Projekty</a>
       <a href="#oferta">Oferta</a>
-      <a class="nav-contact" href="#kontakt">Kontakt <span aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="#kontakt">Kontakt</a>
     </nav>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Otwórz menu"><span></span><span></span></button>
   </header>
@@ -59,7 +59,7 @@
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-controls">
         <div class="hero-left">
-          <div class="hero-short-copy"><p>Architektura zaczyna się od Ciebie.</p><p>My nadajemy jej kształt.</p></div>
+          <div class="hero-short-copy"><p class="hero-lead">Architektura<br>z myślą o Tobie.</p><p>Od pierwszej idei do gotowej przestrzeni.</p></div>
           <div class="hero-actions"><a class="hero-cta hero-cta-primary" href="#projekty">Zobacz nasze projekty <span aria-hidden="true">↗</span></a><a class="hero-cta hero-cta-secondary" href="#kontakt">Kontakt <span aria-hidden="true">↗</span></a></div>
         </div>
         <div class="hero-time" role="group" aria-label="Pora dnia wizualizacji">
@@ -71,7 +71,7 @@
 
         <section id="pracownia" class="lux-about section-pad" aria-labelledby="about-title">
       <div class="lux-about-copy reveal">
-        <h2 id="about-title">O nas</h2>
+        <h2 id="about-title" class="section-title">O nas</h2>
         <p>Jesteśmy pracownią architektoniczną założoną w 2005 roku w Katowicach. Pracownię prowadzi Aleksandra Grundszok-Duda wraz z zespołem architektów oraz specjalistów branżowych. Projektujemy domy jednorodzinne, budynki wielorodzinne, obiekty użyteczności publicznej i wnętrza, zawsze uwzględniając charakter miejsca oraz indywidualne potrzeby inwestorów. Zajmujemy się również modernizacjami, przebudowami i rozbudowami istniejących budynków, kamienic i obiektów zabytkowych. Łączymy architekturę z wiedzą konstrukcyjną i instalacyjną, przygotowując kompleksowe rozwiązania projektowe. Wspieramy inwestorów już na etapie wyboru nieruchomości, następnie podczas prac koncepcyjnych, dokumentacji i uzgodnień urzędowych, a także w trakcie realizacji inwestycji.</p>
       </div>
       <div class="lux-about-photo reveal" role="img" aria-label="Miejsce na zdjęcie pracowni — do uzupełnienia">
@@ -79,7 +79,7 @@
       </div>
     </section>
     <section id="projekty" class="lux-work" aria-labelledby="projects-title">
-      <div class="lux-section-header section-pad reveal"><h2 id="projects-title">Nasze realizacje</h2>
+      <div class="lux-section-header section-pad reveal"><h2 id="projects-title" class="section-title">Nasze realizacje</h2>
         </div>
       <div class="lux-work-viewport" data-project-slider role="region" aria-label="Płynna karuzela realizacji">
         <div class="lux-work-track" data-work-track><div class="lux-work-group" data-work-original>
@@ -91,107 +91,68 @@
         </div></div>
       </div>
     </section>
-    <!-- Przerywnik pełnoekranowy: oryginalna wizualizacja z portfolio pracowni -->
-    <section class="editorial-break" aria-labelledby="interlude-title">
-      <img class="editorial-break-image" src="assets/dom-zory.jpg" alt="Współczesny dom jednorodzinny — projekt pracowni Architekci KP" loading="lazy" decoding="async">
-      <div class="editorial-break-shade" aria-hidden="true"></div>
-      <div class="editorial-break-content">
-        <p class="editorial-break-kicker">ARCHITEKCI KP <span aria-hidden="true">/</span> PRACOWNIA ARCHITEKTONICZNA</p>
-        <h2 id="interlude-title">Architektura,<br>która trwa.</h2>
-        <div class="editorial-break-bottom">
-          <span>KATOWICE / OD 2005 ROKU</span>
-          <span>PRZESTRZEŃ MA ZNACZENIE</span>
-        </div>
-      </div>
+    <section class="editorial-break" aria-label="Podejście pracowni">
+      <svg class="interlude-lines" viewBox="0 0 1200 400" fill="none" aria-hidden="true">
+        <g class="interlude-plan"><path d="M-100 290H180V90H470V330H680V120H1030V310H1320M30 400V200H330V-40M560 450V210H850V-50M900 440V230H1280M100 -30V75H690V-30"/><path d="M180 110L400 -40M470 90L690 -60M680 120L900 -30M1030 120L1250 -30M470 330L690 180M1030 310L1250 160"/><rect x="505" y="140" width="115" height="115"/><circle cx="250" cy="250" r="65"/></g>
+      </svg>
+      <div class="interlude-center"><blockquote>„Niemożliwe staje się możliwe.”</blockquote><p>Domy <span>·</span> Przebudowy <span>·</span> Kamienice <span>·</span> Usługi <span>·</span> Wnętrza</p></div>
     </section>
 
     <section id="oferta" class="lux-offer section-pad" aria-labelledby="offer-title">
-      <h2 id="offer-title" class="reveal">Oferta</h2>
-      <div class="premium-offer-grid">
-        <article class="premium-offer-card reveal">
-          <span class="premium-offer-index">01</span>
-          <h3>ARCHITEKTURA</h3>
-          <p class="premium-offer-intro">Indywidualne projekty budynków, które łączą funkcję, kontekst i ponadczasową formę.</p>
-          <ul><li>Domy jednorodzinne i wielorodzinne</li><li>Przebudowy i rozbudowy budynków</li><li>Kamienice i obiekty zabytkowe</li><li>Budynki usługowe i komercyjne</li><li>Dokumentacja projektowa i wykonawcza</li></ul>
-          <a class="premium-offer-link" href="#kontakt">ZAPYTAJ O PROJEKT</a>
-        </article>
-        <article class="premium-offer-card reveal">
-          <span class="premium-offer-index">02</span>
-          <h3>WNĘTRZA</h3>
-          <p class="premium-offer-intro">Przemyślane przestrzenie prywatne i komercyjne. Od koncepcji po opracowanie techniczne.</p>
-          <ul><li>Wnętrza domów i apartamentów</li><li>Biura i przestrzenie pracy</li><li>Salony samochodowe i lokale usługowe</li><li>Układy funkcjonalne i koncepcje</li><li>Kompleksowe projekty wnętrz</li></ul>
-          <a class="premium-offer-link" href="#kontakt">ZAPYTAJ O PROJEKT</a>
-        </article>
-        <article class="premium-offer-card reveal">
-          <span class="premium-offer-index">03</span>
-          <h3>ANALIZY I DORADZTWO</h3>
-          <p class="premium-offer-intro">Wsparcie inwestycyjne i techniczne na każdym etapie procesu budowlanego.</p>
-          <ul><li>Analiza chłonności terenu</li><li>Projekty zagospodarowania terenu</li><li>Doradztwo przy zakupie nieruchomości</li><li>Uzgodnienia i obsługa procesu budowlanego</li><li>Nadzór autorski i termomodernizacja</li></ul>
-          <a class="premium-offer-link" href="#kontakt">ZAPYTAJ O PROJEKT</a>
-        </article>
+      <h2 id="offer-title" class="section-title reveal">Oferta</h2>
+      <div class="offer-experience">
+        <figure class="offer-preview reveal"><div class="offer-preview-images">
+          <img data-offer-image="0" class="is-active" src="assets/dom-zory.jpg" alt="Dom jednorodzinny w Żorach" loading="lazy">
+          <img data-offer-image="1" aria-hidden="true" class="" src="assets/kukulek.jpg" alt="Przebudowa domu przy ul. Kukułek" loading="lazy">
+          <img data-offer-image="2" aria-hidden="true" class="" src="assets/offer-tenement.jpg" alt="Kamienice — projekty pracowni" loading="lazy">
+          <img data-offer-image="3" aria-hidden="true" class="" src="assets/kia-original.jpg" alt="Salon KIA w Bytomiu" loading="lazy">
+          <img data-offer-image="4" aria-hidden="true" class="" src="assets/offer-interior.jpg" alt="Wnętrze zaprojektowane przez Architekci KP" loading="lazy">
+          <img data-offer-image="5" aria-hidden="true" class="" src="assets/offer-terrain.jpg" alt="Projekt zagospodarowania terenu" loading="lazy">
+        </div><figcaption><span data-offer-caption>Domy</span><span>ARCHITEKCI KP</span></figcaption></figure>
+        <div class="offer-selector reveal">
+          <article class="offer-service is-active"><h3><button class="offer-trigger" type="button" data-offer="0" aria-expanded="true" aria-controls="offer-panel-0"><span class="offer-number">01</span><span class="offer-name">Domy</span><span class="offer-sign" aria-hidden="true">↗</span></button></h3><div class="offer-panel" id="offer-panel-0"><p>Indywidualna architektura dopasowana do miejsca i sposobu życia. Projektujemy domy jednorodzinne oraz budynki wielorodzinne.</p><a href="#kontakt">Porozmawiajmy o projekcie <span aria-hidden="true">↗</span></a></div></article>
+          <article class="offer-service"><h3><button class="offer-trigger" type="button" data-offer="1" aria-expanded="false" aria-controls="offer-panel-1"><span class="offer-number">02</span><span class="offer-name">Przebudowy</span><span class="offer-sign" aria-hidden="true">↗</span></button></h3><div class="offer-panel" id="offer-panel-1" hidden><p>Odkrywamy potencjał istniejących budynków. Projektujemy modernizacje, przebudowy i rozbudowy, łącząc zastaną przestrzeń z nowymi potrzebami.</p><a href="#kontakt">Porozmawiajmy o projekcie <span aria-hidden="true">↗</span></a></div></article>
+          <article class="offer-service"><h3><button class="offer-trigger" type="button" data-offer="2" aria-expanded="false" aria-controls="offer-panel-2"><span class="offer-number">03</span><span class="offer-name">Kamienice</span><span class="offer-sign" aria-hidden="true">↗</span></button></h3><div class="offer-panel" id="offer-panel-2" hidden><p>Nowa funkcja z szacunkiem do historii. Pracujemy z kamienicami i obiektami zabytkowymi, dbając o ich charakter oraz możliwości przekształceń.</p><a href="#kontakt">Porozmawiajmy o projekcie <span aria-hidden="true">↗</span></a></div></article>
+          <article class="offer-service"><h3><button class="offer-trigger" type="button" data-offer="3" aria-expanded="false" aria-controls="offer-panel-3"><span class="offer-number">04</span><span class="offer-name">Obiekty usługowe</span><span class="offer-sign" aria-hidden="true">↗</span></button></h3><div class="offer-panel" id="offer-panel-3" hidden><p>Architektura dla biznesu i codziennego użytkowania. Projektujemy budynki usługowe i przestrzenie dopasowane do ich funkcji.</p><a href="#kontakt">Porozmawiajmy o projekcie <span aria-hidden="true">↗</span></a></div></article>
+          <article class="offer-service"><h3><button class="offer-trigger" type="button" data-offer="4" aria-expanded="false" aria-controls="offer-panel-4"><span class="offer-number">05</span><span class="offer-name">Wnętrza</span><span class="offer-sign" aria-hidden="true">↗</span></button></h3><div class="offer-panel" id="offer-panel-4" hidden><p>Wnętrze jako naturalna kontynuacja architektury. Porządkujemy funkcję, materiały i detale, tworząc spójną całość.</p><a href="#kontakt">Porozmawiajmy o projekcie <span aria-hidden="true">↗</span></a></div></article>
+          <article class="offer-service"><h3><button class="offer-trigger" type="button" data-offer="5" aria-expanded="false" aria-controls="offer-panel-5"><span class="offer-number">06</span><span class="offer-name">Analizy i doradztwo</span><span class="offer-sign" aria-hidden="true">↗</span></button></h3><div class="offer-panel" id="offer-panel-5" hidden><p>Sprawdzamy możliwości przed podjęciem decyzji. Przygotowujemy analizy chłonności i projekty zagospodarowania terenu, doradzamy przy wyborze nieruchomości.</p><a href="#kontakt">Porozmawiajmy o projekcie <span aria-hidden="true">↗</span></a></div></article>
+        </div>
       </div>
     </section>
     <section id="inwestorzy" class="investors-band" aria-labelledby="investors-title">
       <div class="investors-band-head section-pad reveal">
-        <h2 id="investors-title">Wybrani inwestorzy</h2>
-        <p>Doświadczenie, które buduje zaufanie.</p>
+        <h2 id="investors-title" class="section-title">Wybrani inwestorzy</h2>
+
       </div>
       <div class="investors-marquee" data-investor-marquee role="region" aria-label="Lista wybranych inwestorów pracowni">
         <div class="investors-track" data-investor-track>
           <div class="investors-group" data-investor-original>
-            <div class="investor-logo-cell" title="ING Bank Śląski" aria-label="ING Bank Śląski"><img class="brand-logo brand-ing" src="https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/press_kit/file_name/815/large_Zrzut_ekranu_2015-05-07_o_11.23.17.png" alt="ING Bank Śląski" loading="lazy"></div>
-            <div class="investor-logo-cell" title="KIA Komfi" aria-label="KIA Komfi"><img class="brand-logo brand-kia" src="assets/kia-brand.svg" alt="KIA" loading="lazy"></div>
-            <div class="investor-logo-cell" title="AWF Katowice" aria-label="AWF Katowice"><span class="investor-type investor-awf">AWF <small>KATOWICE</small></span></div>
-            <div class="investor-logo-cell" title="Studio Moderna Polska" aria-label="Studio Moderna Polska"><span class="investor-type investor-moderna">studio moderna</span></div>
-            <div class="investor-logo-cell" title="Euromedic" aria-label="Euromedic"><span class="investor-type investor-euromedic">EUROMEDIC</span></div>
-            <div class="investor-logo-cell" title="Rabis" aria-label="Rabis"><span class="investor-type investor-rabis">RABIS</span></div>
-            <div class="investor-logo-cell" title="MedStyle" aria-label="MedStyle"><span class="investor-type investor-medstyle">MedStyle</span></div>
-            <div class="investor-logo-cell" title="Fayran" aria-label="Fayran"><span class="investor-type investor-fayran">FAYRAN</span></div>
+            <div class="investor-logo-cell"><img class="brand-logo" src="assets/investors/ing.svg" alt="ING Bank Śląski" width="260" height="90" loading="lazy"><span>ING Bank Śląski</span></div>
+            <div class="investor-logo-cell"><img class="brand-logo" src="assets/investors/kia-komfi.svg" alt="KIA Komfi" width="260" height="90" loading="lazy"><span>KIA Komfi</span></div>
+            <div class="investor-logo-cell"><img class="brand-logo" src="assets/investors/awf.svg" alt="AWF Katowice" width="260" height="90" loading="lazy"><span>AWF Katowice</span></div>
+            <div class="investor-logo-cell"><img class="brand-logo" src="assets/investors/euromedic.svg" alt="Euromedic" width="260" height="90" loading="lazy"><span>Euromedic</span></div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Kontakt: oficjalne dane pracowni -->
     <section id="kontakt" class="contact-editorial section-pad" aria-labelledby="contact-title">
-      <div class="contact-editorial-top reveal">
-        <span class="contact-eyebrow">ARCHITEKCI KP / KATOWICE</span>
-        <h2 id="contact-title">Kontakt</h2>
-      </div>
-      <div class="contact-editorial-layout">
-        <div class="contact-editorial-intro reveal">
-          <p>Masz pomysł na dom, przebudowę lub nową przestrzeń? Porozmawiajmy o możliwościach Twojej inwestycji.</p>
-          <a class="contact-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Plac+Wolno%C5%9Bci+10A%2F2A%2C+40-078+Katowice" target="_blank" rel="noopener noreferrer">Zobacz lokalizację biura <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="contact-editorial-details reveal">
-          <div class="contact-detail"><span class="contact-detail-label">E-mail</span><a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a></div>
-          <div class="contact-detail"><span class="contact-detail-label">Telefon</span><a href="tel:+48327037025">+48 32 703 70 25</a><a href="tel:+48507061155">+48 507 061 155</a></div>
-          <div class="contact-detail"><span class="contact-detail-label">Adres pracowni</span><address>Plac Wolności 10A/2A<br>40-078 Katowice</address></div>
-        </div>
+      <h2 id="contact-title" class="section-title reveal">Kontakt</h2>
+      <div class="contact-tiles">
+        <div class="contact-tile reveal"><span class="contact-tile-label">E-mail</span><a href="mailto:architekci@architekci-kp.pl">architekci@architekci-kp.pl</a></div>
+        <div class="contact-tile reveal"><span class="contact-tile-label">Telefon</span><a href="tel:+48327037025">+48 32 703 70 25</a><a href="tel:+48507061155">+48 507 061 155</a></div>
+        <div class="contact-tile reveal"><span class="contact-tile-label">Adres</span><address>Plac Wolności 10A/2A<br>40-078 Katowice</address></div>
       </div>
     </section>
 
-    <!-- Formularz wyłącznie demonstracyjny: bez endpointu i bez wysyłki danych -->
     <section class="contact-form-section section-pad" id="formularz" aria-labelledby="form-title">
-      <div class="contact-form-intro reveal">
-        <span class="contact-eyebrow">NOWA INWESTYCJA / ZAPYTANIE</span>
-        <h2 id="form-title">Napisz do nas.</h2>
-        <p>Wersja demonstracyjna formularza. Możesz przetestować pola i wygląd — żadna wiadomość nie zostanie wysłana.</p>
-        <span class="form-intro-index" aria-hidden="true">ARCHITEKCI KP / OD 2005 ROKU</span>
-      </div>
+      <h2 id="form-title" class="section-title reveal">Napisz do nas</h2>
       <form class="contact-form reveal" id="demo-contact-form" autocomplete="off">
         <div class="form-two-columns">
-          <div class="form-field"><label for="form-name">Imię i nazwisko <span aria-hidden="true">*</span></label><input id="form-name" name="name" type="text" autocomplete="name" placeholder="Jak możemy się do Ciebie zwracać?" maxlength="120" required></div>
-          <div class="form-field"><label for="form-email">Adres e-mail <span aria-hidden="true">*</span></label><input id="form-email" name="email" type="email" autocomplete="email" placeholder="twoj@email.pl" maxlength="160" required></div>
+          <div class="form-field"><label for="form-name">Imię i nazwisko</label><input id="form-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+          <div class="form-field"><label for="form-email">E-mail</label><input id="form-email" name="email" type="email" autocomplete="email" maxlength="160" required></div>
         </div>
-        <div class="form-two-columns">
-          <div class="form-field"><label for="form-phone">Numer telefonu <span class="form-optional">(opcjonalnie)</span></label><input id="form-phone" name="phone" type="tel" autocomplete="tel" placeholder="+48 000 000 000" maxlength="40"></div>
-          <div class="form-field"><label for="form-type">Rodzaj projektu <span aria-hidden="true">*</span></label><select id="form-type" name="rodzaj_projektu" required><option value="" selected disabled>Wybierz kategorię</option><option value="Architektura / nowy budynek">Architektura / nowy budynek</option><option value="Przebudowa / modernizacja">Przebudowa / modernizacja</option><option value="Wnętrza">Wnętrza</option><option value="Analiza chłonności terenu">Analiza chłonności terenu</option><option value="Inna inwestycja">Inna inwestycja</option></select></div>
-        </div>
-        <div class="form-field form-field-message"><label for="form-message">Wiadomość <span aria-hidden="true">*</span></label><textarea id="form-message" name="message" rows="5" maxlength="4000" placeholder="Opowiedz nam o planowanym projekcie..." required></textarea></div>
-        <div class="form-submit-row">
-          <p class="form-privacy">Formularz jest tylko podglądem. Wpisane dane nie są wysyłane ani zapisywane.</p>
-          <button type="button" id="demo-form-button">Przetestuj formularz <span aria-hidden="true">↗</span></button>
-        </div>
+        <div class="form-field form-field-message"><label for="form-message">Wiadomość</label><textarea id="form-message" name="message" rows="4" maxlength="4000" required></textarea></div>
+        <div class="form-submit-row"><p class="form-privacy">Formularz demonstracyjny — bez wysyłki.</p><button type="button" id="demo-form-button">Sprawdź formularz <span aria-hidden="true">↗</span></button></div>
         <p id="demo-form-message" class="form-demo-message" role="status" aria-live="polite" hidden>To wersja demonstracyjna — żadna wiadomość nie została wysłana.</p>
       </form>
     </section>

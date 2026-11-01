@@ -170,3 +170,101 @@
 .footer-premium-bottom>span{flex-basis:100%}
 }
 @media(prefers-reduced-motion:reduce){.contact-map-link,.form-submit-row button,.form-field input,.form-field select,.form-field textarea{transition:none!important}}
+/* Wspólny rytm typografii i uproszczone sekcje. */
+main h2.section-title{font:400 clamp(32px,3.4vw,52px)/1.17 Manrope,Arial,sans-serif;letter-spacing:-.045em;color:#171717;margin:0 0 46px}
+.lux-about h2.section-title{text-align:left}
+.lux-about.section-pad{background:#fff}
+.header nav .nav-contact{border:0;padding:0;margin-left:0;background:transparent;color:inherit}
+.hero-v2 .hero-short-copy{margin-bottom:26px}
+.hero-v2 .hero-short-copy .hero-lead{font:400 clamp(30px,3.4vw,50px)/1.12 Manrope,Arial,sans-serif;letter-spacing:-.045em;color:white;text-shadow:0 2px 24px #0003;margin-bottom:14px}
+.hero-v2 .hero-short-copy p+p{font-size:12px;color:#ffffffd9}
+.hero-v2 .hero-clouds{animation:clouds-visible 28s linear infinite alternate}
+@keyframes clouds-visible{from{transform:translateX(-420px)}to{transform:translateX(420px)}}
+/* Niski przerywnik — ruch rysunku, nieruchomy cytat. */
+.editorial-break{height:300px;min-height:0;display:grid;place-items:center;background:#171717;position:relative;overflow:hidden;padding:48px var(--pad)}
+.interlude-lines{position:absolute;inset:-15% -10%;width:120%;height:130%;stroke:#ffffff24;stroke-width:1;pointer-events:none}
+.interlude-plan{transform-origin:center;animation:plan-shift 18s ease-in-out infinite alternate}
+.interlude-plan path{stroke-dasharray:420 120;animation:plan-trace 24s linear infinite}
+.interlude-center{position:relative;z-index:1;text-align:center}
+.interlude-center blockquote{font:400 clamp(25px,3vw,44px)/1.3 Manrope,Arial,sans-serif;letter-spacing:-.035em;margin:0;color:#fff;text-shadow:0 2px 25px #000}
+.interlude-center p{font:400 10px/1.8 Manrope,Arial,sans-serif;letter-spacing:.06em;margin-top:25px;color:#ffffffa6}
+.interlude-center p span{margin:0 12px;color:#fff5}
+@keyframes plan-shift{from{transform:translate(-25px,8px) rotate(-3deg) scale(1)}to{transform:translate(25px,-8px) rotate(3deg) scale(1.06)}}
+@keyframes plan-trace{to{stroke-dashoffset:-1080}}
+/* Oferta — wybór zakresu oraz odpowiadający mu projekt. */
+.lux-offer.section-pad{background:#fff;padding-top:96px;padding-bottom:96px}
+.offer-experience{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:start}
+.offer-preview{position:sticky;top:120px;min-width:0;margin:0}
+.offer-preview-images{position:relative;height:590px;overflow:hidden;background:#ececec}
+.offer-preview-images img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.035);transition:opacity .55s ease,transform 1s ease}
+.offer-preview-images img.is-active{opacity:1;transform:scale(1)}
+.offer-preview figcaption{padding-top:17px;display:flex;justify-content:space-between;gap:20px;font:400 10px/1.5 Manrope,Arial,sans-serif;color:#666}
+.offer-preview figcaption span+span{font-size:8px;letter-spacing:.12em}
+.offer-service{border-top:1px solid #d8d8d8}
+.offer-service:last-child{border-bottom:1px solid #d8d8d8}
+.offer-service h3{margin:0}
+.offer-trigger{border:0;background:transparent;color:#777;display:flex;align-items:center;width:100%;text-align:left;padding:23px 0;gap:22px;transition:color .25s}
+.offer-number{font:400 10px/1 Manrope,Arial,sans-serif;color:#999;flex-shrink:0;width:20px}
+.offer-name{flex:1;font:400 clamp(21px,2vw,30px)/1.25 Manrope,Arial,sans-serif;letter-spacing:-.035em}
+.offer-sign{font:400 23px/1 Manrope,Arial,sans-serif;transition:transform .3s}
+.offer-service.is-active .offer-trigger,.offer-trigger:hover{color:#111}
+.offer-service.is-active .offer-sign{transform:rotate(45deg)}
+.offer-panel{padding:0 28px 27px 42px}
+.offer-panel[hidden]{display:none}
+.offer-panel p{font:400 12px/1.9 Manrope,Arial,sans-serif;color:#666;max-width:440px}
+.offer-panel a{display:inline-flex;align-items:center;gap:36px;margin-top:17px;padding-bottom:6px;border-bottom:1px solid #111;font:400 10px/1.5 Manrope,Arial,sans-serif}
+/* Prawdziwe znaki — bez filtrów i bez zastępowania typografią. */
+.investors-band{background:#f6f6f6;padding:85px 0 70px}
+.investors-band-head.section-pad{padding-bottom:20px}
+.investors-band-head h2.section-title{margin-bottom:25px}
+.investor-logo-cell{width:clamp(270px,25vw,360px);height:160px;padding:20px 30px;flex-direction:column;gap:22px;filter:none;opacity:1}
+.investor-logo-cell .brand-logo{width:100%;height:83px;max-height:none;max-width:260px;object-fit:contain;filter:none;opacity:1}
+.investor-logo-cell>span{font:400 10px/1.5 Manrope,Arial,sans-serif;color:#777}
+.investor-logo-cell:hover{filter:none;opacity:1}
+/* Kontakt — tylko trzy równorzędne kafelki. */
+.contact-editorial.section-pad{background:#fff;padding-top:90px;padding-bottom:85px}
+.contact-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #dedede}
+.contact-tile{padding:30px 28px;min-height:180px;min-width:0}
+.contact-tile+.contact-tile{border-left:1px solid #dedede}
+.contact-tile-label{display:block;font:400 11px/1.5 Manrope,Arial,sans-serif;color:#888;margin-bottom:27px}
+.contact-tile a,.contact-tile address{display:block;font:400 clamp(12px,1.3vw,20px)/1.8 Manrope,Arial,sans-serif;letter-spacing:-.035em;color:#171717;font-style:normal;overflow-wrap:anywhere}
+.contact-tile a:hover{text-decoration:underline;text-underline-offset:4px}
+.contact-form-section.section-pad{display:block;background:#f6f6f6;padding-top:85px;padding-bottom:90px}
+.contact-form-section .contact-form{max-width:850px;margin:0;gap:30px}
+.form-field label{font-weight:400;font-size:11px}
+.form-field textarea{min-height:110px}
+.form-submit-row{margin-top:0;align-items:center}
+.form-privacy{font-size:10px;color:#888}
+.form-submit-row button{font-weight:400;min-height:50px}
+@media(max-width:1050px){.offer-experience{gap:40px}.offer-preview-images{height:540px}.offer-trigger{padding:22px 0;gap:13px}.offer-panel{padding-left:33px}.contact-tile{padding:26px 20px}.contact-tile a,.contact-tile address{font-size:14px}}
+@media(max-width:760px){
+main h2.section-title{font-size:32px;line-height:1.17;letter-spacing:-.045em;margin-bottom:32px}
+.header nav .nav-contact{font-size:16px;max-width:none}
+.hero-v2 .hero-short-copy .hero-lead{font-size:34px;line-height:1.12;margin-bottom:12px}
+.hero-v2 .hero-short-copy p+p{font-size:10px;max-width:270px}
+.hero-v2 .hero-short-copy{margin-bottom:22px}
+.hero-v2 .hero-time{bottom:214px}
+.editorial-break{height:240px;min-height:0;padding:35px 24px}
+.interlude-center blockquote{font-size:28px;max-width:330px;margin:auto}
+.interlude-center p{font-size:8px;line-height:2;max-width:300px;margin:20px auto 0}
+.interlude-center p span{margin:0 5px}
+.lux-offer.section-pad{padding-top:65px;padding-bottom:65px}
+.offer-experience{grid-template-columns:1fr;gap:32px}
+.offer-preview{position:relative;top:auto}
+.offer-preview-images{height:auto;aspect-ratio:1.2}
+.offer-trigger{padding:20px 0;gap:15px}.offer-name{font-size:23px}
+.offer-panel{padding-left:35px}.offer-panel p{font-size:12px}
+.investors-band{padding-top:65px;padding-bottom:50px}
+.investor-logo-cell{width:260px;height:150px;padding:20px 30px}
+.investor-logo-cell .brand-logo{height:75px}
+.contact-editorial.section-pad{padding-top:65px;padding-bottom:65px}
+.contact-tiles{grid-template-columns:1fr}
+.contact-tile{min-height:0;padding:25px}
+.contact-tile+.contact-tile{border-left:0;border-top:1px solid #dedede}
+.contact-tile-label{margin-bottom:13px}
+.contact-tile a,.contact-tile address{font-size:17px}
+.contact-form-section.section-pad{padding-top:65px;padding-bottom:65px}
+.form-submit-row{gap:20px;align-items:stretch}
+}
+@media(prefers-reduced-motion:reduce){.hero-v2 .hero-clouds,.interlude-plan,.interlude-plan path{animation:none!important}.offer-preview-images img,.offer-sign{transition:none!important}}
+@media(max-width:360px){.hero-v2 .hero-cta{padding:14px 12px;font-size:9px;gap:10px}.hero-v2 .hero-cta-secondary{min-width:90px}}

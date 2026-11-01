@@ -16,9 +16,9 @@ for (const match of css.matchAll(/url\(['"]?([^)'" ]+)['"]?\)/g)) await access(m
 assert(html.includes('noindex,nofollow'), 'Draft must not be indexed');
 assert(html.includes('class="hero hero-v2"'), 'Hero must remain present');
 assert.equal((html.match(/class="lux-project"/g) || []).length, 5, 'Expected 5 project placeholders');
-assert.equal((html.match(/class="premium-offer-card reveal"/g) || []).length, 3, 'Expected 3 offer cards');
+assert.equal((html.match(/data-offer="/g) || []).length, 6, 'Expected six service selectors');
 assert(html.includes('id="inwestorzy"'), 'Investor band missing');
-assert(html.includes('class="editorial-break"'), 'Full-screen interlude missing');
+assert(html.includes('class="editorial-break"'), 'Interlude missing');
 assert(html.includes('class="contact-form reveal"'), 'Contact form missing');
 assert(html.includes('class="footer-premium"'), 'Footer missing');
 assert(html.includes('id="demo-contact-form"'), 'Demo form missing');

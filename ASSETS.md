@@ -39,3 +39,20 @@ Prompt finalnego wariantu kolorowego:
 Prompt chmur:
 
 > Use case: photorealistic-natural. Asset type: extra wide panoramic cloud sky texture for the animated background of an architecture website. Only a realistic bright overcast sky, wispy and soft layered silver-grey clouds with a little open pale grey sky between, sophisticated quiet editorial atmosphere, monochrome black and white. Wide composition 3:1 panorama. Uniform luminosity from left to right, soft variation from darker upper clouds to pale lower sky, no dramatic sun, no horizon, no ground, no buildings, no objects, no lettering, no watermarks. Photorealistic, elegant, diffuse light, cloud details clearly visible but restrained.
+
+## Odświeżenie sekcji — rzeczywiste logotypy i oferta
+
+Firmy wybrano z oficjalnej listy: https://architekci-kp.pl/inwestorzy/ . Znaki pobrano z witryn tych podmiotów. Nie są generowane ani zastępowane zwykłym napisem. Zachowano kolory.
+
+- `assets/investors/ing.svg`: https://www.ing.pl/_static/img/logo_lsl_new.5800ff4f65b35cf926f5.svg
+- `assets/investors/kia-komfi.svg`: oryginalny wektor ze znacznika SVG w nagłówku https://komfi.pl/ (KIA Komfi Bytom).
+- `assets/investors/awf.svg`: https://www.awf.katowice.pl/files/cache/8/pl/0/20687/iHWsVOhpobB0VTQpCVycEDVJwYBhBZxovagAORnJ8dW5eflhoGjgJAAMaVVZZdhpMSmgyA0FnGiEXU0gIKTcqLRJkFiYFKT1LGg/loga_awf_kolor.svg
+- `assets/investors/euromedic.svg`: https://euromedic.com.pl/wp-content/themes/euromedic/img/logo.svg
+
+Materiały do podglądu oferty, z portfolio Architekci KP:
+
+- `assets/offer-tenement.jpg`: https://architekci-kp.pl/wp-content/uploads/2021/12/03-KAMIENICE.jpg
+- `assets/offer-interior.jpg`: https://architekci-kp.pl/wp-content/uploads/2021/12/07-WNETRZA-1.jpg
+- `assets/offer-terrain.jpg`: https://architekci-kp.pl/wp-content/uploads/2021/12/04-ZAGOSPODAROWANIA-TERENU.jpg
+
+Pozostałe ujęcia oferty wykorzystują wcześniejsze oryginalne wizualizacje pracowni opisane wyżej. Cytat „Niemożliwe staje się możliwe” pochodzi z treści na stronie pracowni. Animowany rysunek w przerywniku jest dekoracją SVG wykonaną w kodzie, a nie projektem budowlanym.

@@ -51,15 +51,25 @@ function createContinuousMarquee(selector,trackSelector,groupSelector,speed) {
  if(!viewport)return;
  const track=viewport.querySelector(trackSelector),original=viewport.querySelector(groupSelector);
  if(!track||!original)return;
- const clone=original.cloneNode(true);
- clone.removeAttribute(groupSelector.startsWith('[')?groupSelector.slice(1,-1):groupSelector);
- clone.setAttribute('aria-hidden','true');
- track.append(clone);
+ const clones=[];
+ const addClone=()=>{
+  const clone=original.cloneNode(true);
+  clone.removeAttribute(groupSelector.startsWith('[')?groupSelector.slice(1,-1):groupSelector);
+  clone.setAttribute('aria-hidden','true');
+  clone.setAttribute('inert','');
+  track.append(clone);clones.push(clone);
+ };
+ addClone();
  let width=0,offset=0,last=0,dragging=false,lastX=0;
  const measure=()=>{
   const gap=parseFloat(getComputedStyle(track).columnGap)||0;
   width=original.getBoundingClientRect().width+gap;
-  if(width)offset=((offset%width)+width)%width;
+  if(width){
+   const needed=Math.max(1,Math.ceil(viewport.clientWidth/width));
+   while(clones.length<needed)addClone();
+   while(clones.length>needed)clones.pop().remove();
+   offset=((offset%width)+width)%width;
+  }
   track.style.transform='translate3d('+(-offset)+'px,0,0)';
  };
  if('ResizeObserver' in window)new ResizeObserver(measure).observe(original);
@@ -93,6 +103,30 @@ function createContinuousMarquee(selector,trackSelector,groupSelector,speed) {
 }
 createContinuousMarquee('[data-project-slider]','[data-work-track]','[data-work-original]',44);
 createContinuousMarquee('[data-investor-marquee]','[data-investor-track]','[data-investor-original]',34);
+
+// Wybór usługi: opis i odpowiadający mu materiał z portfolio.
+const offerButtons=document.querySelectorAll('[data-offer]');
+function selectOffer(button){
+ const key=button.dataset.offer;
+ offerButtons.forEach(item=>{
+  const active=item===button;
+  item.setAttribute('aria-expanded',String(active));
+  item.closest('.offer-service').classList.toggle('is-active',active);
+  document.getElementById(item.getAttribute('aria-controls')).hidden=!active;
+ });
+ document.querySelectorAll('[data-offer-image]').forEach(image=>{
+  const active=image.dataset.offerImage===key;
+  image.classList.toggle('is-active',active);
+  image.setAttribute('aria-hidden',String(!active));
+ });
+ const caption=document.querySelector('[data-offer-caption]');
+ if(caption)caption.textContent=button.querySelector('.offer-name').textContent;
+}
+offerButtons.forEach(button=>{
+ button.addEventListener('click',()=>selectOffer(button));
+ button.addEventListener('focus',()=>selectOffer(button));
+ button.addEventListener('pointerenter',()=>{if(matchMedia('(hover: hover)').matches)selectOffer(button)});
+});
 
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
