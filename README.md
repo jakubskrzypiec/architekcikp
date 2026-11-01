@@ -1,23 +1,21 @@
-# Architekci KP — koncepcja strony (etap 2)
+# Architekci KP — koncepcja high-end (iteracja 3)
 
-Strona prezentacyjna pracowni Architekci KP zbudowana w czystym HTML, CSS i JavaScript. Układ: **hero → O pracowni → karuzela projektów → oferta → minimalistyczny kontakt**. Hero, jego obrazowanie i przełącznik dzień/noc są zachowane z wcześniejszej wersji.
+Autorska, statyczna strona 21project. Obecne hero i przełącznik dzień/noc pozostają dokładnie bez zmian. Sekcje pod nim zostały uproszczone zgodnie z ostatnimi uwagami klienta:
+
+- **O nas:** tylko duży nagłówek i opis po lewej; po prawej celowo puste miejsce na zdjęcie.
+- **Nasze realizacje:** duże kwadratowe kafle „DO UZUPEŁNIENIA”, bez podpisów ani kategorii, branding „ARCHITEKCI KP” wyłącznie po najechaniu. Karuzela przesuwa się płynnie w pętli, bez skoków lub pauz. Strzałki chwilowo przyspieszają ruch w wybranym kierunku.
+- **Oferta:** sześć kart z wizualizacjami i krótkimi opisami: domy, przebudowy, kamienice, analiza chłonności terenu, usługi (w tym salony samochodowe) i wnętrza.
+
+## Grafiki w ofercie
+
+Trzy obrazy są prawdziwymi realizacjami z wcześniej dodanych materiałów pracowni: dom w Żorach, przebudowa domu w Orzeszu, salon samochodowy KIA. Trzy dodatkowe obrazy (kamienice, analiza terenu, wnętrza) są **samodzielnie przygotowanymi ilustracjami koncepcyjnymi SVG**, a nie fotografiami. Pozwalają już obejrzeć gotowy układ, ale docelowo powinny zostać zastąpione zatwierdzonymi zdjęciami lub renderami (np. generowanymi wizualizacjami fotorealistycznymi). Zdjęcie O nas jest celowo puste.
 
 ## Uruchomienie
 
-- `npm run dev` — lokalny podgląd na http://127.0.0.1:4173
-- `npm run check` — weryfikacja zasobów, linków i struktury
-- `npm run build` — eksport statycznej strony do `dist/`
+- `npm run dev` — podgląd pod http://127.0.0.1:4173
+- `npm run check` — walidacja struktury, odnośników i plików
+- `npm run build` — generuje statyczne `dist/` wraz z `premium-v2.css`
 
-Node.js 20+. Nie trzeba instalować zależności.
+Node.js 20+, bez zależności zewnętrznych. `noindex,nofollow` pozostaje włączone, bo to wersja koncepcyjna.
 
-## Założenia graficzne
-
-Minimalistyczny, spokojny projekt, którego typografia i tło nie konkurują ze zdjęciami realizacji. Cała strona korzysta z **Manrope**, bez kursywy. Paleta to off-white, ciepłe szarości i prawie czarny. Zdjęcie po prawej w sekcji „O nas” pochodzi z lokalnych zasobów pracowni (`assets/aleksandra.jpg`).
-
-Karuzela projektów ma **5 świadomych placeholderów** „Do uzupełnienia”; nie dodajemy fotografii realizacji przed decyzją o ich doborze. Działa automatyczne przesuwanie co 4,8 sekundy, strzałki, przewijanie dotykowe, przeciąganie myszą i pauza podczas interakcji. Ustawienie ograniczonego ruchu wyłącza auto-przesuwanie.
-
-Oferta ma sześć obszarów: Domy, Przebudowy, Kamienice, Analiza chłonności terenu, Usługi, Wnętrza.
-
-Teksty „O nas” oraz zakres usług zostały opracowane na podstawie publicznej, istniejącej strony klientki: https://architekci-kp.pl/o-nas/ i https://architekci-kp.pl/.
-
-Wersja pozostaje koncepcją z `noindex,nofollow`. Przed publikacją produkcyjną trzeba zatwierdzić zdjęcia, treści i dane kontaktowe oraz usunąć blokadę indeksowania.
+Treści o pracowni zostały skrócone na podstawie oficjalnej strony: https://architekci-kp.pl/o-nas/.
