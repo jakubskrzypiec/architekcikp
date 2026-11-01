@@ -75,3 +75,13 @@ Nowe oryginalne materiały pracowni do oferty:
 - `assets/offer-interior-new.jpg`: https://architekci-kp.pl/wp-content/uploads/2021/12/03_Dom-z-sadem_Nowa-Zory.jpg
 
 Karuzela obejmuje 10 podmiotów wymienionych na https://architekci-kp.pl/inwestorzy/ . Dla sześciu dodatkowych firm użyto nazw tekstowych zamiast niezweryfikowanych lub dorobionych logo: Studio Moderna, MedStyle, Rabis, Fayran, Sapia Investments i DDS Invest.
+
+## Przerywnik związany z portfolio i kolejne logotypy
+
+Odrzucone studium AI nie jest już wyświetlane na stronie. Zastąpił je oryginalny projekt przebudowy domu w Orzeszu (`assets/orzesze.jpg`, źródło podane wyżej). Stonowanie koloru, przyciemnienie i ruch kadru są efektami CSS, bez zmiany geometrii budynku. Podpis wskazuje rzeczywisty projekt i autora.
+
+Dwie kolejne nazwy zastąpiono oryginalnymi znakami:
+- `assets/investors/medstyle.png`: https://www.medstyle.eu/images/logowhitepng.png — plik identyfikacji z nagłówka i danych Organization oficjalnej strony https://www.medstyle.eu/ . Biały znak pokazano na grafitowym tle, bez przerysowania.
+- `assets/investors/studio-moderna.png`: https://cdn.kosovajob.com/admin/companyLogos/3389921548319899.png — logo na ogłoszeniu rekrutacyjnym Studio Moderna: https://kosovajob.com/studio-moderna/regional-visual-merchandiser .
+
+Karuzela zawiera 10 podmiotów: sześć oryginalnych znaków i cztery nazwy tekstowe (Rabis, Fayran, Sapia Investments, DDS Invest). Nie znaleziono wiarygodnych plików logo ostatnich czterech firm.
