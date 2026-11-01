@@ -170,18 +170,15 @@
       </div>
     </section>
 
-    <!-- Formularz: natywna wysyłka do FormSubmit, aktywacja wymagana przez odbiorcę -->
+    <!-- Formularz wyłącznie demonstracyjny: bez endpointu i bez wysyłki danych -->
     <section class="contact-form-section section-pad" id="formularz" aria-labelledby="form-title">
       <div class="contact-form-intro reveal">
         <span class="contact-eyebrow">NOWA INWESTYCJA / ZAPYTANIE</span>
         <h2 id="form-title">Napisz do nas.</h2>
-        <p>Opisz krótko swoją inwestycję. Skontaktujemy się z Tobą, aby omówić szczegóły i możliwości współpracy.</p>
+        <p>Wersja demonstracyjna formularza. Możesz przetestować pola i wygląd — żadna wiadomość nie zostanie wysłana.</p>
         <span class="form-intro-index" aria-hidden="true">ARCHITEKCI KP / OD 2005 ROKU</span>
       </div>
-      <form class="contact-form reveal" action="https://formsubmit.co/architekci@architekci-kp.pl" method="POST" accept-charset="UTF-8">
-        <input type="hidden" name="_subject" value="Nowe zapytanie ze strony Architekci KP">
-        <input type="hidden" name="_template" value="table">
-        <div class="form-honeypot" aria-hidden="true"><label>Nie wypełniaj tego pola <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+      <form class="contact-form reveal" id="demo-contact-form" autocomplete="off">
         <div class="form-two-columns">
           <div class="form-field"><label for="form-name">Imię i nazwisko <span aria-hidden="true">*</span></label><input id="form-name" name="name" type="text" autocomplete="name" placeholder="Jak możemy się do Ciebie zwracać?" maxlength="120" required></div>
           <div class="form-field"><label for="form-email">Adres e-mail <span aria-hidden="true">*</span></label><input id="form-email" name="email" type="email" autocomplete="email" placeholder="twoj@email.pl" maxlength="160" required></div>
@@ -192,9 +189,10 @@
         </div>
         <div class="form-field form-field-message"><label for="form-message">Wiadomość <span aria-hidden="true">*</span></label><textarea id="form-message" name="message" rows="5" maxlength="4000" placeholder="Opowiedz nam o planowanym projekcie..." required></textarea></div>
         <div class="form-submit-row">
-          <p class="form-privacy">Dane z formularza są przekazywane pracowni Architekci KP w celu odpowiedzi na zapytanie. Wysyłkę obsługuje zewnętrzna usługa FormSubmit.</p>
-          <button type="submit">Wyślij wiadomość <span aria-hidden="true">↗</span></button>
+          <p class="form-privacy">Formularz jest tylko podglądem. Wpisane dane nie są wysyłane ani zapisywane.</p>
+          <button type="button" id="demo-form-button">Przetestuj formularz <span aria-hidden="true">↗</span></button>
         </div>
+        <p id="demo-form-message" class="form-demo-message" role="status" aria-live="polite" hidden>To wersja demonstracyjna — żadna wiadomość nie została wysłana.</p>
       </form>
     </section>
 

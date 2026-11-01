@@ -25,8 +25,12 @@ To nadal wersja koncepcyjna z meta `noindex,nofollow`.
 
 - Pełnoekranowy przerywnik **między realizacjami a ofertą**. Używa lokalnej wizualizacji `assets/dom-zory.jpg`, przyciemnionego gradientu i minimalistycznej typografii; nie zmienia hero.
 - Po „Wybranych inwestorach” znajduje się sekcja **Kontakt** z oficjalnymi, zweryfikowanymi na `architekci-kp.pl/kontakt/` danymi: `architekci@architekci-kp.pl`, `+48 32 703 70 25`, `+48 507 061 155`, Plac Wolności 10A/2A, 40-078 Katowice.
-- Pod danymi znajduje się responsywny **formularz kontaktowy**. Formularz działa w czystym HTML i wysyła metodą POST do `https://formsubmit.co/architekci@architekci-kp.pl`. Ma wymagane imię/nazwisko, e-mail, kategorię i wiadomość; telefon jest opcjonalny. Dodano antyspamowy honeypot, reCAPTCHA po stronie dostawcy oraz informację o zewnętrznej usłudze.
-- **Przed produkcją konieczne:** właściciel skrzynki musi aktywować FormSubmit po pierwszej próbnej wysyłce, klikając link potwierdzający w wiadomości e-mail. Bez aktywacji nie można uważać formularza za uruchomiony. Dodatkowo należy przygotować/zweryfikować politykę prywatności i informacje RODO oraz zatwierdzić korzystanie z FormSubmit jako podmiotu zewnętrznego.
+- Pod danymi znajduje się responsywny **formularz demonstracyjny**, z polami imię i nazwisko, e-mail, telefon, rodzaj projektu i wiadomość. Nie ma zdefiniowanego odbiorcy, `action`, `method=POST` ani integracji z FormSubmit. Przycisk typu `button` jedynie sprawdza wymagane pola i wyświetla potwierdzenie, że **nic nie zostało wysłane**. Dodatkowy handler zapobiega przypadkowemu wysłaniu formularza Enterem. Dane nie są przechowywane.
+- Na etapie publikacji niezbędne będą świadomy wybór dostawcy formularzy, zgoda na integrację, test wysyłki oraz informacje RODO.
 - Nowa, ciemna **stopka premium** z nazwą pracowni, nawigacją, danymi, CTA do formularza, rokiem aktualizowanym automatycznie i dyskretnym podpisem 21project.
 
 Strona nadal ma `noindex,nofollow` jako projekt do zatwierdzenia.
+
+
+## Iteracja 6 — formularz bez wysyłki
+Na prośbę właściciela projektu usunięto integrację z FormSubmit i adres docelowy **wyłącznie z konfiguracji formularza**. Formularz pozostaje wyłącznie wizualnym demonstratorem i nie wysyła e-maili ani danych. Publiczne dane kontaktowe w sekcji Kontakt pozostają jako zwykłe odnośniki dla odwiedzających.

@@ -96,3 +96,16 @@ createContinuousMarquee('[data-investor-marquee]','[data-investor-track]','[data
 
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
+
+// Formularz demonstracyjny: nigdy nie wykonuje wysyłki ani połączenia sieciowego.
+const demoForm = document.querySelector('#demo-contact-form');
+const demoButton = document.querySelector('#demo-form-button');
+const demoMessage = document.querySelector('#demo-form-message');
+if (demoForm) {
+  demoForm.addEventListener('submit', (event) => event.preventDefault());
+  demoButton?.addEventListener('click', () => {
+    if (!demoForm.reportValidity()) return;
+    if (demoMessage) demoMessage.hidden = false;
+  });
+  demoForm.addEventListener('input', () => { if (demoMessage) demoMessage.hidden = true; });
+}
