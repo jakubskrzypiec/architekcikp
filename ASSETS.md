@@ -60,3 +60,18 @@ Pozostałe ujęcia oferty wykorzystują wcześniejsze oryginalne wizualizacje pr
 ## Trzy kafle oferty i fotograficzny przerywnik
 
 Nowy plik `assets/offer-interior-alt.jpg` to oryginalna fotografia z portfolio pracowni: https://architekci-kp.pl/wp-content/uploads/2021/12/08-WNETRZA.jpg . Służy jako drugi kadr kafla Wnętrza. Pozostałe kafle oraz przerywnik korzystają z materiałów pracowni opisanych wcześniej. Zmiana ujęć i delikatny ruch zdjęcia są efektami CSS; nie stanowią filmu. Przerywnik z rysunkiem SVG został zastąpiony wizualizacją budynku.
+
+## Nowy przerywnik AI i zdjęcia oferty
+
+`assets/interlude-ai-courtyard.webp` wygenerowano wbudowanym narzędziem imagegen. To odrębna wizja artystyczna, oznaczona w stronie jako studium AI. Nie przedstawia realizacji Architekci KP. Kompresja do WebP bez dodatkowych zmian twórczych.
+
+Prompt:
+
+> Use case: stylized-concept. Asset: cinematic panoramic background for an architecture studio website, 3:1 wide aspect ratio. Create a sophisticated photorealistic conceptual architectural scene: a sculptural contemporary building made of warm pale limestone and soft off-white concrete, two horizontal volumes framing an open courtyard, one generous circular opening through a wall, a slender reflecting pool, refined large glass planes with a very subtle warm interior glow. Camera at human eye level from outside looking diagonally across the courtyard; architecture fills most of the wide image, strong composition and tactile material details. Quiet late-afternoon light, long soft shadows, subtle natural muted green planting, real sky with soft clouds. Restrained neutral palette with natural color, warm-grey stone and ivory, dark reflections. An editorial architectural photograph of a believable but imaginative building, not a sci-fi fantasy, not an existing named project. Keep the center composition calm and relatively low contrast so a short white heading can be overlaid later in code. No people, no cars, no writing, no lettering, no watermarks, no logos. The image is only the visual, not a website screenshot.
+
+Nowe oryginalne materiały pracowni do oferty:
+
+- `assets/offer-architecture-new.jpg`: https://architekci-kp.pl/wp-content/uploads/2021/12/01_Dom-letniskowy.jpg
+- `assets/offer-interior-new.jpg`: https://architekci-kp.pl/wp-content/uploads/2021/12/03_Dom-z-sadem_Nowa-Zory.jpg
+
+Karuzela obejmuje 10 podmiotów wymienionych na https://architekci-kp.pl/inwestorzy/ . Dla sześciu dodatkowych firm użyto nazw tekstowych zamiast niezweryfikowanych lub dorobionych logo: Studio Moderna, MedStyle, Rabis, Fayran, Sapia Investments i DDS Invest.
