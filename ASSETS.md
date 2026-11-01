@@ -85,3 +85,9 @@ Dwie kolejne nazwy zastąpiono oryginalnymi znakami:
 - `assets/investors/studio-moderna.png`: https://cdn.kosovajob.com/admin/companyLogos/3389921548319899.png — logo na ogłoszeniu rekrutacyjnym Studio Moderna: https://kosovajob.com/studio-moderna/regional-visual-merchandiser .
 
 Karuzela zawiera 10 podmiotów: sześć oryginalnych znaków i cztery nazwy tekstowe (Rabis, Fayran, Sapia Investments, DDS Invest). Nie znaleziono wiarygodnych plików logo ostatnich czterech firm.
+
+## Wizualizacja domu w Orzeszu z animowanym niebem
+
+`assets/orzesze-ai.webp` wygenerowano wbudowanym narzędziem imagegen na podstawie `assets/orzesze.jpg`, z zachowaniem charakterystycznej bryły, układu okien i materiałów. To wizualizacja AI na podstawie projektu, nie fotografia realizacji. Plik ma 2172 × 724 px. `assets/orzesze-ai-foreground.webp` to wyodrębniona tym samym narzędziem warstwa domu i zieleni z przezroczystym niebem. Służy wyłącznie jako maska: strona pokazuje niezmienną pełną wizualizację, a maska ogranicza ruchome chmury do nieba. Zachowano kanał alfa, oba pliki skompresowano do WebP.
+
+Niebo korzysta z istniejącego `assets/hero-clouds.webp`. CSS przesuwa teksturę w 42-sekundowym cyklu. Sam budynek nie skaluje się ani nie przemieszcza. Pełne prompty: `orzesze-ai-prompts.txt`.

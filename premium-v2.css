@@ -351,3 +351,29 @@ main h2.section-title{font-size:32px;line-height:1.17;letter-spacing:-.045em;mar
 @media(max-width:1050px){.offer-tile{height:580px}}
 @media(max-width:760px){.offer-tile{height:520px}.interlude-center .interlude-heading{font-size:34px;max-width:300px;margin:auto}.interlude-credit{right:24px;bottom:15px;font-size:7px}.investor-name-cell>.investor-company-name{min-height:75px;font-size:26px}}
 @media(prefers-reduced-motion:reduce){.offer-tile-photos .offer-tile-photo{transition:none!important}}
+/* Nieruchomy dom, niezależnie animowane niebo; maska chroni bryłę i zieleń. */
+.editorial-break{padding-top:28px;background:#bdcedb}
+.interlude-building{animation:none;filter:none;object-position:center;transform:none}
+.interlude-sky{display:none;position:absolute;inset:0;z-index:0;background-color:#b9cddd;background-image:url('assets/hero-clouds.webp');background-blend-mode:multiply;background-size:180% auto;background-position:0 0;background-repeat:repeat-x;mask-image:linear-gradient(#000,#000),url('assets/orzesze-ai-foreground.webp');mask-size:100% 100%,cover;mask-position:center;mask-repeat:no-repeat;mask-composite:exclude;animation:orzesze-sky-drift 42s ease-in-out infinite alternate;pointer-events:none}
+@supports(mask-composite:exclude){.interlude-sky{display:block}}
+.interlude-photo-shade{background:linear-gradient(180deg,#15222d70,transparent 38%,transparent 83%,#15222d60)}
+.interlude-center{align-self:start}
+.interlude-center .interlude-heading{font-size:clamp(28px,3vw,44px);text-shadow:0 2px 18px #0006}
+.interlude-center .interlude-heading+p{margin-top:10px}
+.interlude-credit{color:#fff;text-shadow:0 1px 5px #0009}
+@keyframes orzesze-sky-drift{from{background-position:0 0}to{background-position:100% 0}}
+@media(max-width:760px){
+ .editorial-break{height:300px;padding-top:28px}
+ .interlude-building{object-fit:contain;object-position:center bottom}
+ .interlude-sky{background-size:auto 360px;mask-size:100% 100%,contain;mask-position:center,center bottom}
+ .interlude-center .interlude-heading{font-size:30px}
+ .interlude-center .interlude-heading+p{margin-top:12px}
+ .interlude-photo-shade{background:linear-gradient(180deg,#15222d70,transparent 55%,transparent 85%,#15222d40)}
+ .interlude-credit{bottom:7px;font-size:6px}
+}
+@media(prefers-reduced-motion:reduce){.interlude-sky{animation:none!important}}
+/* Szeroki kadr mieści całą bryłę; dodatkowe niebo daje miejsce na hasło. */
+.editorial-break{height:clamp(400px,calc(100vw / 3 + 70px),650px)}
+.interlude-building{object-fit:contain;object-position:center bottom}
+.interlude-sky{background-color:#bdd2e2;background-blend-mode:screen;mask-size:100% 100%,contain;mask-position:center,center bottom}
+@media(max-width:760px){.editorial-break{height:300px}}
