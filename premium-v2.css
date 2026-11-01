@@ -1,0 +1,38 @@
+/* Premium redesign of sections beneath preserved hero */
+.lux-about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,8vw,140px);align-items:center;min-height:720px;padding-top:clamp(110px,11vw,190px);padding-bottom:clamp(110px,11vw,190px);background:#faf9f6}
+.lux-about-copy{max-width:640px}.lux-about h2{font:500 clamp(72px,8vw,140px)/1.02 Manrope,Arial,sans-serif;letter-spacing:-.085em;color:#171717;margin:0 0 46px}
+.lux-about-copy p{max-width:600px;font:400 clamp(13px,1vw,16px)/2 Manrope,Arial,sans-serif;color:#393936;letter-spacing:-.012em}
+.lux-about-photo{width:100%;aspect-ratio:4/5;display:grid;place-items:center;background:#e8e7e2;border:1px solid #e1e0da}
+.lux-about-photo span{font:500 10px/1.3 Manrope,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8c8b84}
+.lux-work{padding:clamp(75px,8vw,140px) 0 clamp(92px,9vw,150px);background:#f2f1ed;overflow:hidden}
+.lux-section-header.section-pad{padding-top:0;padding-bottom:clamp(40px,5vw,82px);display:flex;justify-content:space-between;align-items:center;gap:32px}
+.lux-section-header h2,.lux-offer h2{font:500 clamp(54px,6.6vw,108px)/1.08 Manrope,Arial,sans-serif;letter-spacing:-.078em;color:#181818}
+.lux-slider-nav{display:flex;gap:10px;flex-shrink:0}
+.lux-slider-nav button{width:58px;height:58px;border:1px solid #a7a7a0;background:transparent;font-size:24px;transition:color .25s,background .25s}
+.lux-slider-nav button:hover{background:#171717;color:#fff}
+.lux-work-viewport{overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none}
+.lux-work-viewport:active{cursor:grabbing}
+.lux-work-track{display:flex;width:max-content;gap:clamp(12px,1.2vw,22px);will-change:transform}
+.lux-work-group{display:flex;gap:clamp(12px,1.2vw,22px);flex-shrink:0}
+.lux-project{width:clamp(290px,34vw,630px);aspect-ratio:1;position:relative;overflow:hidden;flex-shrink:0;background:#e3e2dc}
+.lux-project:nth-child(2n){background:#e9e8e3}.lux-project:nth-child(3n){background:#dcdcd6}
+.lux-project-placeholder{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(10px,.8vw,13px);font-weight:500;letter-spacing:.12em;color:#9b9a93}
+.lux-project-overlay{position:absolute;inset:0;display:grid;place-items:center;background:#161616d9;color:#fff;font-size:clamp(27px,3vw,50px);font-weight:700;letter-spacing:-.07em;opacity:0;transition:opacity .4s}
+.lux-project:hover .lux-project-overlay{opacity:1}
+.lux-offer{background:#fff;padding-top:clamp(90px,10vw,175px);padding-bottom:clamp(90px,11vw,175px)}
+.lux-offer h2{margin:0 0 clamp(45px,6vw,85px)}
+.lux-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(45px,5vw,90px) clamp(18px,2.2vw,42px)}
+.lux-offer-card{min-width:0}.lux-offer-media{width:100%;aspect-ratio:1/1.08;overflow:hidden;background:#e6e5df}
+.lux-offer-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.lux-offer-card:hover img{transform:scale(1.045)}
+.lux-offer-card h3{margin:20px 0 8px;font:600 clamp(19px,1.6vw,28px)/1.3 Manrope,Arial,sans-serif;letter-spacing:-.045em;color:#171717}
+.lux-offer-card p{font:400 clamp(11px,.8vw,13px)/1.8 Manrope,Arial,sans-serif;color:#595955;max-width:420px}
+@media(min-width:1700px){.lux-about.section-pad,.lux-offer.section-pad{padding-left:var(--pad);padding-right:var(--pad)}}
+@media(max-width:1000px){.lux-about{gap:40px;min-height:0}.lux-about h2{font-size:clamp(62px,7vw,88px)}.lux-offer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:55px 25px}.lux-project{width:50vw}}
+@media(max-width:760px){.lux-about{grid-template-columns:1fr;gap:43px;padding-top:90px;padding-bottom:90px}.lux-about h2{font-size:clamp(66px,15vw,100px);margin-bottom:27px}.lux-about-copy p{font-size:13px;line-height:1.95}.lux-about-photo{aspect-ratio:4/4.2}
+.lux-section-header.section-pad{padding-bottom:35px}.lux-section-header h2,.lux-offer h2{font-size:clamp(44px,10vw,70px)}
+.lux-slider-nav{gap:7px}.lux-slider-nav button{width:43px;height:43px;font-size:19px}
+.lux-work{padding-top:86px;padding-bottom:86px}.lux-project{width:78vw}
+.lux-offer{padding-top:90px;padding-bottom:95px}.lux-offer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 15px}.lux-offer-card h3{font-size:18px;margin-top:15px}.lux-offer-card p{font-size:11px}}
+@media(max-width:480px){.lux-section-header.section-pad{gap:12px}.lux-section-header h2{font-size:clamp(36px,10vw,48px)}.lux-slider-nav button{width:38px;height:38px}.lux-offer-grid{grid-template-columns:1fr;gap:40px}.lux-offer-media{aspect-ratio:1.2}.lux-offer-card h3{font-size:24px}.lux-offer-card p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.lux-project-overlay,.lux-offer-media img{transition:none!important}}

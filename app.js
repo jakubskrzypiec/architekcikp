@@ -45,97 +45,33 @@ function setHeroTime(time) {
 }
 timeButtons.forEach(button => button.addEventListener('click', () => setHeroTime(button.dataset.heroTime)));
 
-// Karuzela projektów: strzałki, auto-przesuwanie, swipe, pauza przy interakcji.
-const slider = document.querySelector('[data-project-slider]');
-if (slider) {
-  const slides = [...slider.querySelectorAll('.project-slide')];
-  const current = document.querySelector('[data-carousel-current]');
-  const progress = document.querySelector('[data-carousel-progress]');
-  const previous = document.querySelector('[data-slide-prev]');
-  const next = document.querySelector('[data-slide-next]');
-  let active = 0;
-  let autoTimer = null;
-  let paused = false;
-  let isDragging = false;
-  let dragStartX = 0;
-  let dragStartScroll = 0;
-  let scrollFrame = null;
-
-  function updateStatus() {
-    if (current) current.textContent = String(active + 1).padStart(2, '0');
-    if (progress) progress.style.width = ((active + 1) / slides.length * 100) + '%';
+// Jednostajny, zapętlony ruch 1:1 bez snapowania lub skoków.
+const viewport = document.querySelector('[data-project-slider]');
+if(viewport){
+ const track=viewport.querySelector('[data-work-track]'),first=viewport.querySelector('[data-work-original]');
+ const second=first.cloneNode(true);second.removeAttribute('data-work-original');second.setAttribute('aria-hidden','true');track.append(second);
+ let width=0,offset=0,last=0,direction=1,boost=0,drag=false,lastX=0;
+ const measure=()=>{const gap=parseFloat(getComputedStyle(track).gap)||0;width=first.getBoundingClientRect().width+gap;if(width)offset=((offset%width)+width)%width;track.style.transform='translate3d('+(-offset)+'px,0,0)'};
+ new ResizeObserver(measure).observe(first);measure();
+ const steer=dir=>{direction=dir;boost=performance.now()+1900};
+ document.querySelector('[data-slide-prev]')?.addEventListener('click',()=>steer(-1));
+ document.querySelector('[data-slide-next]')?.addEventListener('click',()=>steer(1));
+ viewport.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;drag=true;lastX=e.clientX;try{viewport.setPointerCapture(e.pointerId)}catch(_){}});
+ viewport.addEventListener('pointermove',e=>{if(!drag||!width)return;offset=((offset-(e.clientX-lastX))%width+width)%width;lastX=e.clientX;track.style.transform='translate3d('+(-offset)+'px,0,0)'});
+ viewport.addEventListener('pointerup',()=>drag=false);viewport.addEventListener('pointercancel',()=>drag=false);
+ function frame(now){
+  if(!last)last=now;
+  const dt=Math.min((now-last)/1000,.05);last=now;
+  if(width&&!drag&&!reduceMotion.matches&&!document.hidden){
+   const boosted=now<boost;
+   const speed=boosted?230:(window.innerWidth<761?30:43);
+   offset=((offset+direction*speed*dt)%width+width)%width;
+   track.style.transform='translate3d('+(-offset)+'px,0,0)';
+   if(!boosted&&direction<0)direction=1;
   }
-  function scrollToSlide(index) {
-    active = (index + slides.length) % slides.length;
-    const target = slides[active].offsetLeft - slides[0].offsetLeft;
-    slider.scrollTo({ left: target, behavior: reduceMotion.matches ? 'instant' : 'smooth' });
-    updateStatus();
-  }
-  function pause() { paused = true; }
-  function resume() { paused = false; }
-  function stopAuto() { if (autoTimer) clearInterval(autoTimer); autoTimer = null; }
-
-  previous?.addEventListener('click', () => scrollToSlide(active - 1));
-  next?.addEventListener('click', () => scrollToSlide(active + 1));
-  slider.addEventListener('keydown', event => {
-    if (event.key === 'ArrowRight') { event.preventDefault(); scrollToSlide(active + 1); }
-    if (event.key === 'ArrowLeft') { event.preventDefault(); scrollToSlide(active - 1); }
-  });
-  slider.addEventListener('scroll', () => {
-    if (scrollFrame) cancelAnimationFrame(scrollFrame);
-    scrollFrame = requestAnimationFrame(() => {
-      const position = slider.scrollLeft;
-      const lastReachable = Math.max(0, slider.scrollWidth - slider.clientWidth);
-      let nearest = 0;
-      let distance = Infinity;
-      for (let i = 0; i < slides.length; i++) {
-        const left = Math.min(slides[i].offsetLeft - slides[0].offsetLeft, lastReachable);
-        const delta = Math.abs(left - position);
-        if (delta < distance) { nearest = i; distance = delta; }
-      }
-      active = nearest;
-      updateStatus();
-    });
-  }, { passive: true });
-
-  slider.addEventListener('pointerdown', event => {
-    if (event.pointerType !== 'mouse' || event.button !== 0) return;
-    isDragging = true;
-    dragStartX = event.clientX;
-    dragStartScroll = slider.scrollLeft;
-    slider.classList.add('is-dragging');
-    slider.setPointerCapture(event.pointerId);
-    pause();
-  });
-  slider.addEventListener('pointermove', event => {
-    if (!isDragging) return;
-    slider.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
-  });
-  function endDrag() {
-    if (!isDragging) return;
-    isDragging = false;
-    slider.classList.remove('is-dragging');
-    resume();
-  }
-  slider.addEventListener('pointerup', endDrag);
-  slider.addEventListener('pointercancel', endDrag);
-  slider.addEventListener('mouseenter', pause);
-  slider.addEventListener('mouseleave', () => { if (!isDragging) resume(); });
-  slider.addEventListener('focusin', pause);
-  slider.addEventListener('focusout', resume);
-  const controls = document.querySelector('.carousel-controls');
-  controls?.addEventListener('mouseenter', pause);
-  controls?.addEventListener('mouseleave', resume);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); else resume(); });
-  if (!reduceMotion.matches && slides.length > 1) {
-    autoTimer = setInterval(() => { if (!paused && !document.hidden) scrollToSlide(active + 1); }, 4800);
-  }
-  reduceMotion.addEventListener('change', event => {
-    if (event.matches) stopAuto();
-    else if (!autoTimer) autoTimer = setInterval(() => { if (!paused && !document.hidden) scrollToSlide(active + 1); }, 4800);
-  });
-  updateStatus();
+  requestAnimationFrame(frame);
+ }
+ requestAnimationFrame(frame);
 }
-
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
