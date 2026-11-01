@@ -11,9 +11,11 @@ for (const match of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
   if (/^(?:https?:|mailto:|tel:)/.test(path)) continue;
   await access(path);
 }
-for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match[1]), `Missing anchor: ${match[1]}`);
+for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match[1]), 'Missing anchor: ' + match[1]);
 for (const match of css.matchAll(/url\(['"]?([^)'" ]+)['"]?\)/g)) await access(match[1]);
-for (const name of ['kia-original.jpg','kia-2.jpg','dom-zory.jpg','dom-zory-2.jpg','kukulek.jpg','kukulek-2.jpg','orzesze.jpg','orzesze-2.jpg']) await access(`assets/${name}`);
-assert(js.includes('dialog.showModal()'), 'Project galleries must open');
-assert(html.includes('noindex,nofollow'), 'Concept must not be indexed');
-console.log('Validated assets, section anchors, font files, gallery data and metadata.');
+assert(html.includes('noindex,nofollow'), 'Draft must not be indexed');
+assert(html.includes('class="hero hero-v2"'), 'Hero must remain present');
+assert.equal((html.match(/class="project-slide"/g) || []).length, 5, 'Expected 5 project placeholders');
+assert(!html.includes('<em>'), 'No italic headings');
+assert(js.includes('scrollToSlide') && js.includes('setHeroTime'), 'Slider and day/night interactions must be present');
+console.log('Validated section anchors, assets, hero, placeholders and metadata.');

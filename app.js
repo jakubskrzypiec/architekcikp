@@ -1,20 +1,22 @@
 const menu = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
 function closeMenu() {
+  if (!menu || !navigation) return;
   menu.setAttribute('aria-expanded', 'false');
   menu.setAttribute('aria-label', 'Otwórz menu');
   navigation.classList.remove('open');
 }
-menu.addEventListener('click', () => {
-  const open = menu.getAttribute('aria-expanded') !== 'true';
-  menu.setAttribute('aria-expanded', String(open));
-  menu.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
-  navigation.classList.toggle('open', open);
-});
-navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-matchMedia('(min-width: 761px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
-
+if (menu && navigation) {
+  menu.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    menu.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+    navigation.classList.toggle('open', open);
+  });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+  matchMedia('(min-width: 761px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+}
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
 if ('IntersectionObserver' in window && !reduceMotion.matches) {
   document.documentElement.classList.add('js-reveal');
@@ -25,13 +27,15 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.07 });
   document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 }
 
+// Hero zachowany z poprzedniej koncepcji: przełączanie dzień / noc.
 const hero = document.querySelector('.hero-v2');
 const timeButtons = document.querySelectorAll('[data-hero-time]');
 function setHeroTime(time) {
+  if (!hero) return;
   hero.dataset.time = time;
   timeButtons.forEach(button => {
     const selected = button.dataset.heroTime === time;
@@ -41,81 +45,97 @@ function setHeroTime(time) {
 }
 timeButtons.forEach(button => button.addEventListener('click', () => setHeroTime(button.dataset.heroTime)));
 
-const filterButtons = document.querySelectorAll('[data-filter]');
-function filterProjects(category) {
-  filterButtons.forEach(button => {
-    const active = button.dataset.filter === category;
-    button.classList.toggle('active', active);
-    button.setAttribute('aria-pressed', String(active));
-  });
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.hidden = category !== 'wszystkie' && card.dataset.category !== category;
-    card.classList.add('visible');
-  });
-}
-filterButtons.forEach(button => button.addEventListener('click', () => filterProjects(button.dataset.filter)));
-document.querySelectorAll('[data-filter-link]').forEach(link => link.addEventListener('click', () => filterProjects(link.dataset.filterLink)));
+// Karuzela projektów: strzałki, auto-przesuwanie, swipe, pauza przy interakcji.
+const slider = document.querySelector('[data-project-slider]');
+if (slider) {
+  const slides = [...slider.querySelectorAll('.project-slide')];
+  const current = document.querySelector('[data-carousel-current]');
+  const progress = document.querySelector('[data-carousel-progress]');
+  const previous = document.querySelector('[data-slide-prev]');
+  const next = document.querySelector('[data-slide-next]');
+  let active = 0;
+  let autoTimer = null;
+  let paused = false;
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragStartScroll = 0;
+  let scrollFrame = null;
 
-const projects = {
-  kia: {
-    title: 'Salon KIA', category: 'Bytom / Obiekt usługowy',
-    description: 'Wyrazista, ciemna bryła i przeszklona fasada. Dwa ujęcia projektu salonu KIA w Bytomiu z portfolio pracowni Architekci KP. Poniżej prezentujemy oryginalne wizualizacje — artystyczny wariant AI został wykorzystany wyłącznie w otwarciu strony.',
-    images: ['kia-original.jpg', 'kia-2.jpg'],
-    source: 'https://architekci-kp.pl/'
-  },
-  zory: {
-    title: 'Dom przy Czapli', category: 'Żory / Dom jednorodzinny',
-    description: 'Dom jednorodzinny przy ulicy Czapli w Żorach. Zestawienie jasnych płaszczyzn, drewna i dużych przeszkleń. Wybrane wizualizacje z portfolio pracowni.',
-    images: ['dom-zory.jpg', 'dom-zory-2.jpg'],
-    source: 'https://architekci-kp.pl/projekty/domy/'
-  },
-  kukulek: {
-    title: 'Nowy rozdział domu', category: 'Katowice, ul. Kukułek / Przebudowa domu z lat 60.',
-    description: 'Projekt przebudowy domu z lat 60. przy ulicy Kukułek w Katowicach-Brynowie. Nowa perspektywa istniejącej zabudowy, pokazana w dwóch ujęciach z portfolio pracowni.',
-    images: ['kukulek.jpg', 'kukulek-2.jpg'],
-    source: 'https://architekci-kp.pl/projekty/domy/przebudowa-domu-z-lat-60-tych-2/'
-  },
-  orzesze: {
-    title: 'Potencjał na nowo', category: 'Orzesze, ul. Żorska / Przebudowa domu z lat 50.',
-    description: 'Projekt przebudowy domu z lat 50. przy ulicy Żorskiej w Orzeszu. Jasna elewacja i uporządkowana forma nadają budynkowi współczesny charakter. Wybrane wizualizacje z portfolio pracowni.',
-    images: ['orzesze.jpg', 'orzesze-2.jpg'],
-    source: 'https://architekci-kp.pl/projekty/domy/przebudowa-domu-z-lat-60-tych-3/'
+  function updateStatus() {
+    if (current) current.textContent = String(active + 1).padStart(2, '0');
+    if (progress) progress.style.width = ((active + 1) / slides.length * 100) + '%';
   }
-};
-const dialog = document.querySelector('.project-dialog');
-let lastTrigger;
-function openProject(key, trigger) {
-  const project = projects[key];
-  if (!project) return;
-  lastTrigger = trigger;
-  document.querySelector('#dialog-title').textContent = project.title;
-  document.querySelector('#dialog-category').textContent = project.category;
-  document.querySelector('#dialog-description').textContent = project.description;
-  document.querySelector('#dialog-source').href = project.source;
-  const images = project.images.map((file, index) => {
-    const image = document.createElement('img');
-    image.src = `assets/${file}`;
-    image.alt = `${project.title} — wizualizacja ${index + 1}`;
-    image.decoding = 'async';
-    return image;
+  function scrollToSlide(index) {
+    active = (index + slides.length) % slides.length;
+    const target = slides[active].offsetLeft - slides[0].offsetLeft;
+    slider.scrollTo({ left: target, behavior: reduceMotion.matches ? 'instant' : 'smooth' });
+    updateStatus();
+  }
+  function pause() { paused = true; }
+  function resume() { paused = false; }
+  function stopAuto() { if (autoTimer) clearInterval(autoTimer); autoTimer = null; }
+
+  previous?.addEventListener('click', () => scrollToSlide(active - 1));
+  next?.addEventListener('click', () => scrollToSlide(active + 1));
+  slider.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight') { event.preventDefault(); scrollToSlide(active + 1); }
+    if (event.key === 'ArrowLeft') { event.preventDefault(); scrollToSlide(active - 1); }
   });
-  document.querySelector('#dialog-gallery').replaceChildren(...images);
-  dialog.showModal();
-  dialog.scrollTop = 0;
-  document.body.classList.add('modal-open');
+  slider.addEventListener('scroll', () => {
+    if (scrollFrame) cancelAnimationFrame(scrollFrame);
+    scrollFrame = requestAnimationFrame(() => {
+      const position = slider.scrollLeft;
+      const lastReachable = Math.max(0, slider.scrollWidth - slider.clientWidth);
+      let nearest = 0;
+      let distance = Infinity;
+      for (let i = 0; i < slides.length; i++) {
+        const left = Math.min(slides[i].offsetLeft - slides[0].offsetLeft, lastReachable);
+        const delta = Math.abs(left - position);
+        if (delta < distance) { nearest = i; distance = delta; }
+      }
+      active = nearest;
+      updateStatus();
+    });
+  }, { passive: true });
+
+  slider.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    isDragging = true;
+    dragStartX = event.clientX;
+    dragStartScroll = slider.scrollLeft;
+    slider.classList.add('is-dragging');
+    slider.setPointerCapture(event.pointerId);
+    pause();
+  });
+  slider.addEventListener('pointermove', event => {
+    if (!isDragging) return;
+    slider.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
+  });
+  function endDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+    slider.classList.remove('is-dragging');
+    resume();
+  }
+  slider.addEventListener('pointerup', endDrag);
+  slider.addEventListener('pointercancel', endDrag);
+  slider.addEventListener('mouseenter', pause);
+  slider.addEventListener('mouseleave', () => { if (!isDragging) resume(); });
+  slider.addEventListener('focusin', pause);
+  slider.addEventListener('focusout', resume);
+  const controls = document.querySelector('.carousel-controls');
+  controls?.addEventListener('mouseenter', pause);
+  controls?.addEventListener('mouseleave', resume);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); else resume(); });
+  if (!reduceMotion.matches && slides.length > 1) {
+    autoTimer = setInterval(() => { if (!paused && !document.hidden) scrollToSlide(active + 1); }, 4800);
+  }
+  reduceMotion.addEventListener('change', event => {
+    if (event.matches) stopAuto();
+    else if (!autoTimer) autoTimer = setInterval(() => { if (!paused && !document.hidden) scrollToSlide(active + 1); }, 4800);
+  });
+  updateStatus();
 }
-document.querySelectorAll('[data-open-project]').forEach(trigger => trigger.addEventListener('click', event => {
-  event.preventDefault();
-  openProject(trigger.dataset.openProject, trigger);
-}));
-document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => {
-  const rect = dialog.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-});
-dialog.addEventListener('close', () => {
-  document.body.classList.remove('modal-open');
-  lastTrigger?.focus({preventScroll: true});
-});
-document.querySelector('#dialog-contact').addEventListener('click', () => dialog.close());
-document.querySelector('#year').textContent = new Date().getFullYear();
+
+const year = document.querySelector('#year');
+if (year) year.textContent = String(new Date().getFullYear());
