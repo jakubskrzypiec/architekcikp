@@ -377,3 +377,17 @@ main h2.section-title{font-size:32px;line-height:1.17;letter-spacing:-.045em;mar
 .interlude-building{object-fit:contain;object-position:center bottom}
 .interlude-sky{background-color:#bdd2e2;background-blend-mode:screen;mask-size:100% 100%,contain;mask-position:center,center bottom}
 @media(max-width:760px){.editorial-break{height:300px}}
+/* Wersja do prezentacji klientce: jedno hasło i czytelniejsza oferta. */
+.interlude-center{position:absolute;inset:0;display:grid;place-items:center;padding:24px;align-self:stretch}
+.interlude-center .interlude-heading{max-width:none;text-align:center;text-shadow:0 2px 18px #000c,0 1px 4px #000a}
+.interlude-photo-shade{background:linear-gradient(180deg,#15222d20,#15222d45 50%,#15222d15)}
+.offer-tile:after{background:linear-gradient(0deg,#000e 0%,#000b 35%,#0003 70%,transparent)}
+.offer-tile-scope{font-size:12px;line-height:1.65;color:#fff;max-width:none}
+.offer-tile-description{font-size:15px;line-height:1.75;color:#fff;min-height:132px;max-width:360px}
+.offer-tile-link{font-size:13px;padding-top:18px;margin-top:20px;color:#fff}
+@media(max-width:1050px) and (min-width:761px){.offer-tile-copy{padding:25px 21px}.offer-tile-description{font-size:14px;min-height:148px}.offer-tile-scope{font-size:11px}}
+@media(max-width:760px){.interlude-center .interlude-heading{font-size:30px;max-width:none;margin:0}.offer-tile-description{font-size:15px;min-height:0;max-width:360px}.offer-tile-scope{font-size:12px}.offer-tile-link{font-size:13px}}
+/* Większe hasło bez cienia tekstu. */
+.interlude-center .interlude-heading{font-size:clamp(44px,5.5vw,80px);line-height:1.12;letter-spacing:-.045em;text-shadow:none}
+.interlude-photo-shade{background:linear-gradient(180deg,#15222d10,#10182070 50%,#15222d15)}
+@media(max-width:760px){.interlude-center .interlude-heading{font-size:clamp(34px,9vw,44px);max-width:340px}}
