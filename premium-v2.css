@@ -268,3 +268,68 @@ main h2.section-title{font-size:32px;line-height:1.17;letter-spacing:-.045em;mar
 }
 @media(prefers-reduced-motion:reduce){.hero-v2 .hero-clouds,.interlude-plan,.interlude-plan path{animation:none!important}.offer-preview-images img,.offer-sign{transition:none!important}}
 @media(max-width:360px){.hero-v2 .hero-cta{padding:14px 12px;font-size:9px;gap:10px}.hero-v2 .hero-cta-secondary{min-width:90px}}
+/* Hero: biały logotyp także w dzień, spokojniejszy ruch i czyste CTA. */
+.hero-v2 .hero-brand-behind{fill:#fff}
+.hero-v2 .hero-clouds{animation-duration:42s}
+.hero-v2 .hero-short-copy .hero-lead{margin-bottom:0}
+.hero-v2 .hero-cta{justify-content:center;gap:0;min-height:58px;padding:18px 28px;font-size:12px}
+.hero-v2 .hero-cta-primary{min-width:225px}
+.hero-v2 .hero-cta-secondary{min-width:150px}
+/* Wyższy przerywnik z rzeczywistą architekturą. */
+.editorial-break{height:440px;padding:60px var(--pad)}
+.interlude-building{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;animation:interlude-building-drift 24s ease-in-out infinite alternate;z-index:0}
+.interlude-photo-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0008,#0005 55%,#0008);z-index:0}
+.interlude-center blockquote{text-shadow:0 2px 28px #0008}
+.interlude-center p{color:#ffffffe0}
+@keyframes interlude-building-drift{from{transform:scale(1.025) translateY(0)}to{transform:scale(1.09) translateY(-1%)}}
+/* Trzy zakresy. Obrazy reagują na najechanie i fokus z klawiatury. */
+.offer-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.offer-tile{position:relative;min-width:0;height:510px;overflow:hidden;background:#222;color:white;display:flex;align-items:flex-end;isolation:isolate}
+.offer-tile-photos{position:absolute;inset:0;z-index:-2}
+.offer-tile-photos img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .75s ease,transform 1.1s ease}
+.offer-tile-photo{opacity:.83;transform:scale(1.005)}
+.offer-tile-alternate{opacity:0;transform:scale(1.07)}
+.offer-tile:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#000d,transparent 87%);z-index:-1;transition:background .4s}
+.offer-tile:is(:hover,:focus-visible) .offer-tile-photo{opacity:0;transform:scale(1.04)}
+.offer-tile:is(:hover,:focus-visible) .offer-tile-alternate{opacity:1;transform:scale(1)}
+.offer-tile-index{position:absolute;top:25px;left:27px;font:400 11px/1.5 Manrope,Arial,sans-serif;letter-spacing:.08em}
+.offer-tile-copy{padding:30px 27px;width:100%;transform:translateY(0)}
+.offer-tile-copy h3{font:400 clamp(25px,2.4vw,36px)/1.15 Manrope,Arial,sans-serif;letter-spacing:-.04em;margin:13px 0 17px;color:white}
+.offer-tile-scope{font:400 9px/1.7 Manrope,Arial,sans-serif;color:#fffc;max-width:250px}
+.offer-tile-description{font:400 11px/1.8 Manrope,Arial,sans-serif;color:#fffc;min-height:79px;max-width:310px}
+.offer-tile-link{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ffffff60;margin-top:23px;padding-top:15px;font:400 10px/1.5 Manrope,Arial,sans-serif}
+.offer-tile-link>span{font-size:17px}
+/* Wyśrodkowany podpis nad logotypami. */
+.investors-band-head.section-pad{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding-bottom:36px}
+.investors-band-head h2.section-title{margin:0;text-align:center}
+.investors-band-head p{font:400 13px/1.7 Manrope,Arial,sans-serif;color:#707070;padding:0;margin:0}
+/* Większy formularz na osi strony. */
+.contact-form-section h2.section-title{text-align:center;margin-bottom:54px}
+.contact-form-section .contact-form{max-width:1000px;width:100%;margin:0 auto;gap:36px}
+.contact-form-section .form-field label{font-size:12px}
+.contact-form-section .form-field input{min-height:62px;font-size:15px;padding:14px 2px 18px}
+.contact-form-section .form-field textarea{min-height:190px;font-size:15px;line-height:1.85;padding-top:18px}
+.contact-form-section .form-submit-row{flex-direction:column-reverse;align-items:center;gap:18px}
+.contact-form-section .form-submit-row button{min-width:235px;min-height:58px;font-size:12px}
+.contact-form-section .form-privacy{text-align:center;max-width:none}
+@media(max-width:1050px){.offer-tiles{gap:18px}.offer-tile{height:490px}.offer-tile-copy{padding:26px 23px}.offer-tile-description{min-height:99px}}
+@media(max-width:760px){
+.hero-v2 .hero-cta{min-height:54px;font-size:11px;padding:16px 18px}
+.hero-v2 .hero-cta-primary{min-width:0;flex:1.6}
+.hero-v2 .hero-cta-secondary{min-width:0;flex:1}
+.hero-v2 .hero-time{bottom:182px}
+.editorial-break{height:340px;padding:40px 24px}
+.interlude-building{object-position:45% center}
+.offer-tiles{grid-template-columns:1fr;gap:20px}
+.offer-tile{height:440px}
+.offer-tile-copy{padding:28px}.offer-tile-copy h3{font-size:33px}
+.offer-tile-description{min-height:0;max-width:340px;font-size:12px}
+.offer-tile-scope{max-width:none;font-size:9px}
+.investors-band-head.section-pad{gap:13px;padding-bottom:30px}
+.investors-band-head p{font-size:12px;max-width:270px}
+.contact-form-section h2.section-title{margin-bottom:38px}
+.contact-form-section .form-field textarea{min-height:175px}
+.contact-form-section .form-submit-row button{width:100%;min-width:0}
+}
+@media(max-width:360px){.hero-v2 .hero-cta{padding:16px 10px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.interlude-building{animation:none!important}.offer-tile-photos img{transition:none!important}}

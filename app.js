@@ -104,30 +104,6 @@ function createContinuousMarquee(selector,trackSelector,groupSelector,speed) {
 createContinuousMarquee('[data-project-slider]','[data-work-track]','[data-work-original]',44);
 createContinuousMarquee('[data-investor-marquee]','[data-investor-track]','[data-investor-original]',34);
 
-// Wybór usługi: opis i odpowiadający mu materiał z portfolio.
-const offerButtons=document.querySelectorAll('[data-offer]');
-function selectOffer(button){
- const key=button.dataset.offer;
- offerButtons.forEach(item=>{
-  const active=item===button;
-  item.setAttribute('aria-expanded',String(active));
-  item.closest('.offer-service').classList.toggle('is-active',active);
-  document.getElementById(item.getAttribute('aria-controls')).hidden=!active;
- });
- document.querySelectorAll('[data-offer-image]').forEach(image=>{
-  const active=image.dataset.offerImage===key;
-  image.classList.toggle('is-active',active);
-  image.setAttribute('aria-hidden',String(!active));
- });
- const caption=document.querySelector('[data-offer-caption]');
- if(caption)caption.textContent=button.querySelector('.offer-name').textContent;
-}
-offerButtons.forEach(button=>{
- button.addEventListener('click',()=>selectOffer(button));
- button.addEventListener('focus',()=>selectOffer(button));
- button.addEventListener('pointerenter',()=>{if(matchMedia('(hover: hover)').matches)selectOffer(button)});
-});
-
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
 

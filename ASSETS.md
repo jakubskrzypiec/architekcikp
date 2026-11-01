@@ -56,3 +56,7 @@ Materiały do podglądu oferty, z portfolio Architekci KP:
 - `assets/offer-terrain.jpg`: https://architekci-kp.pl/wp-content/uploads/2021/12/04-ZAGOSPODAROWANIA-TERENU.jpg
 
 Pozostałe ujęcia oferty wykorzystują wcześniejsze oryginalne wizualizacje pracowni opisane wyżej. Cytat „Niemożliwe staje się możliwe” pochodzi z treści na stronie pracowni. Animowany rysunek w przerywniku jest dekoracją SVG wykonaną w kodzie, a nie projektem budowlanym.
+
+## Trzy kafle oferty i fotograficzny przerywnik
+
+Nowy plik `assets/offer-interior-alt.jpg` to oryginalna fotografia z portfolio pracowni: https://architekci-kp.pl/wp-content/uploads/2021/12/08-WNETRZA.jpg . Służy jako drugi kadr kafla Wnętrza. Pozostałe kafle oraz przerywnik korzystają z materiałów pracowni opisanych wcześniej. Zmiana ujęć i delikatny ruch zdjęcia są efektami CSS; nie stanowią filmu. Przerywnik z rysunkiem SVG został zastąpiony wizualizacją budynku.
