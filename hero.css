@@ -1,0 +1,38 @@
+@font-face{font-family:Manrope;src:url('assets/manrope-normal-800.ttf') format('truetype');font-style:normal;font-weight:800;font-display:swap}
+.header{background:#fff;color:#111;border-bottom-color:#e5e5e5}
+.nav-contact{border-color:#111}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.hero-v2{height:calc(100svh - 88px);min-height:640px;max-height:1100px;background:#dce1e4;color:#fff;isolation:isolate}
+.hero-v2 .hero-scene{position:absolute;inset:0;transform:none;animation:none;pointer-events:none}
+.hero-v2 .hero-art{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden}
+.hero-brand-behind{transition:fill 1.2s ease}
+.hero-brand-mobile{display:none}
+.hero-clouds{animation:clouds-travel 85s ease-in-out infinite alternate;will-change:transform;transition:filter 1.2s ease;filter:brightness(1.08)}
+.hero-sky-base{transition:fill 1.2s ease}
+.hero-building-day,.hero-building-night{filter:none}
+.hero-building-night{opacity:0;transition:opacity 1.2s ease}
+.hero-v2[data-time=night] .hero-building-night{opacity:1}
+.hero-v2[data-time=night] .hero-brand-behind{fill:#fff}
+.hero-v2[data-time=night] .hero-clouds{filter:brightness(.28) sepia(.8) hue-rotate(174deg) saturate(2.2)}
+.hero-v2[data-time=night] .hero-sky-base{fill:#09172d}
+.hero-v2 .hero-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.64),rgba(0,0,0,.12) 24%,transparent 46%);pointer-events:none}
+.hero-controls{position:absolute;left:var(--pad);right:var(--pad);bottom:46px;display:flex;justify-content:space-between;align-items:flex-end;gap:36px}
+.hero-short-copy{margin-bottom:20px}
+.hero-short-copy p{font:400 12px/1.7 Manrope,Arial,sans-serif;letter-spacing:.015em;color:#fff}
+.hero-short-copy p+p{color:#ffffffb8}
+.hero-actions{display:flex;gap:12px}
+.hero-cta{display:inline-flex;justify-content:space-between;align-items:center;gap:32px;padding:17px 20px;min-height:52px;font:500 11px/1.3 Manrope,Arial,sans-serif;border:1px solid #fff;transition:background .2s,color .2s;white-space:nowrap}
+.hero-cta-primary{background:#fff;color:#111}
+.hero-cta-primary:hover{background:#e6e6e6;border-color:#e6e6e6}
+.hero-cta-secondary{background:#0002;color:#fff;min-width:122px}
+.hero-cta-secondary:hover{background:#fff;color:#111}
+.hero-cta span{font-size:14px}
+.hero-time{display:flex;gap:3px;padding:4px;border:1px solid #ffffff73;background:#10101047;backdrop-filter:blur(12px)}
+.hero-time button{display:flex;align-items:center;justify-content:center;gap:9px;border:0;background:transparent;color:#fff;padding:12px 15px;font:500 10px/1 Manrope,Arial,sans-serif;transition:color .2s,background .2s}
+.hero-time button.is-active{background:#fff;color:#111}
+.hero-time button:not(.is-active):hover{background:#ffffff1a}
+.hero-time svg{height:15px;width:15px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+@keyframes clouds-travel{from{transform:translateX(-200px)}to{transform:translateX(200px)}}
+@media(max-width:1050px){.hero-controls{bottom:38px}.hero-cta{padding:16px 18px;gap:26px}.hero-v2{min-height:620px}}
+@media(max-width:760px){.hero-v2{height:calc(100svh - 74px);min-height:620px;max-height:950px}.hero-v2 .hero-scene{inset:0}.hero-brand-desktop{display:none}.hero-brand-mobile{display:block}.hero-controls{bottom:30px;left:24px;right:24px;display:block}.hero-short-copy{margin-bottom:18px}.hero-short-copy p{font-size:11px}.hero-left{width:100%}.hero-actions{gap:10px}.hero-cta{padding:16px 15px;font-size:10px;gap:15px;min-height:50px}.hero-cta-primary{flex:1}.hero-cta-secondary{min-width:102px}.hero-time{position:absolute;right:0;bottom:146px}.hero-time button{padding:11px 12px;font-size:9px;gap:7px}.hero-time svg{width:13px;height:13px}.hero-v2 .hero-shade{background:linear-gradient(0deg,#000b,transparent 43%)}}
+@media(prefers-reduced-motion:reduce){.hero-clouds{animation:none!important;will-change:auto}.hero-brand-behind,.hero-clouds,.hero-sky-base,.hero-building-night{transition:none!important}}

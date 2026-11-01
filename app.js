@@ -29,16 +29,17 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
   document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
 }
 
-const motion = document.querySelector('.motion-toggle');
-function setPaused(paused) {
-  document.body.classList.toggle('motion-paused', paused);
-  motion.setAttribute('aria-pressed', String(paused));
-  motion.setAttribute('aria-label', paused ? 'Wznów animację hero' : 'Wstrzymaj animację hero');
-  motion.textContent = paused ? '▷' : 'Ⅱ';
+const hero = document.querySelector('.hero-v2');
+const timeButtons = document.querySelectorAll('[data-hero-time]');
+function setHeroTime(time) {
+  hero.dataset.time = time;
+  timeButtons.forEach(button => {
+    const selected = button.dataset.heroTime === time;
+    button.classList.toggle('is-active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
 }
-setPaused(reduceMotion.matches);
-motion.addEventListener('click', () => setPaused(motion.getAttribute('aria-pressed') !== 'true'));
-reduceMotion.addEventListener('change', event => setPaused(event.matches));
+timeButtons.forEach(button => button.addEventListener('click', () => setHeroTime(button.dataset.heroTime)));
 
 const filterButtons = document.querySelectorAll('[data-filter]');
 function filterProjects(category) {

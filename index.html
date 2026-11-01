@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f4f3ee">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Architekci KP — pracownia architektoniczna z Katowic. Domy, przebudowy, obiekty usługowe i wnętrza. Poznaj nasze projekty i porozmawiajmy o Twojej inwestycji.">
   <meta name="robots" content="noindex,nofollow">
   <meta property="og:title" content="Architekci KP — Przestrzeń z myślą o Tobie">
@@ -12,6 +12,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/hero.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="preload" href="assets/manrope-normal-800.ttf" as="font" type="font/ttf" crossorigin>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -20,29 +22,47 @@
     <a class="brand" href="#start" aria-label="Architekci KP — strona główna"><img src="assets/logo-original.jpg" width="268" height="50" alt="Architekci kp — Grundszok Duda"></a>
     <nav id="navigation" aria-label="Nawigacja główna">
       <a href="#oferta">Oferta</a><a href="#projekty">Projekty</a><a href="#pracownia">Pracownia</a><a href="#proces">Jak pracujemy</a>
-      <a class="nav-contact" href="#kontakt">Porozmawiajmy <span aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="#kontakt">Kontakt <span aria-hidden="true">↗</span></a>
     </nav>
     <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Otwórz menu"><span></span><span></span></button>
   </header>
   <main id="tresc">
-    <section class="hero" id="start" aria-label="Architekci KP — architektura i projektowanie">
+    <section class="hero hero-v2" id="start" aria-label="Architekci KP — architektura i projektowanie" data-time="day">
+      <h1 class="visually-hidden">Architekci KP — pracownia architektoniczna</h1>
       <div class="hero-scene" aria-hidden="true">
-        <svg viewBox="0 0 1870 841" preserveAspectRatio="xMidYMid slice" class="hero-art">
-          <defs><clipPath id="building-mask"><polygon points="0,580 205,580 205,354 721,190 1739,468 1739,580 1870,580 1870,841 0,841"/></clipPath></defs>
-          <image href="assets/hero.webp" width="1870" height="841"/>
-          <g class="hero-wordmark-svg"><text x="108" y="243" font-family="Manrope,Arial,sans-serif" font-size="218" letter-spacing="-13" fill="#f4f3ee" fill-opacity=".86">ARCHITEKCI<tspan font-size="135" letter-spacing="-10" dx="25">kp</tspan></text></g>
-          <text class="mobile-wordmark" x="935" y="160" text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size="61" letter-spacing="-3" fill="#f4f3ee">ARCHITEKCI kp</text>
-          <image href="assets/hero.webp" width="1870" height="841" clip-path="url(#building-mask)"/>
+        <svg viewBox="0 -260 1870 1101" preserveAspectRatio="xMidYMax slice" class="hero-art">
+          <defs>
+            <clipPath id="hero-foreground-mask"><path d="M205 354 L721 190 L1739 468 L1739 514 L1685 517 L1685 720 L1870 740 L1870 841 L0 841 L0 740 L247 740 L247 434 L205 425 Z"/></clipPath>
+            <linearGradient id="scene-fade" x1="0" y1="0" x2="0" y2="360" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="white" stop-opacity="0"/><stop offset="1" stop-color="white"/></linearGradient>
+            <mask id="scene-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1870" height="841"><rect width="1870" height="841" fill="url(#scene-fade)"/></mask>
+          </defs>
+          <rect class="hero-sky-base" x="-2000" y="-1000" width="6000" height="2000" fill="#dce1e4"/>
+          <image class="hero-clouds" href="assets/hero-clouds.webp" x="-935" y="-580" width="3740" height="1247"/>
+          <g mask="url(#scene-mask)">
+            <image class="hero-building-day" href="assets/hero.webp" width="1870" height="841"/>
+            <image class="hero-building-night" href="assets/hero-night-color.webp" width="1870" height="841"/>
+          </g>
+          <g class="hero-brand-behind" fill="#111111" font-family="Manrope,Arial,sans-serif" font-weight="800" font-size="190" letter-spacing="-8" text-anchor="middle">
+            <text class="hero-brand-desktop" x="935" y="280" textLength="1660" lengthAdjust="spacingAndGlyphs">ARCHITEKCI KP</text>
+            <text class="hero-brand-mobile" x="935" y="240" font-size="90" textLength="440" lengthAdjust="spacingAndGlyphs">ARCHITEKCI KP</text>
+          </g>
+          <g clip-path="url(#hero-foreground-mask)">
+            <image class="hero-building-day" href="assets/hero.webp" width="1870" height="841"/>
+            <image class="hero-building-night" href="assets/hero-night-color.webp" width="1870" height="841"/>
+          </g>
         </svg>
       </div>
-      <div class="hero-shade"></div>
-      <div class="hero-topline"><span>GRUNDSZOK DUDA</span><span>PRACOWNIA ARCHITEKTONICZNA · KATOWICE</span></div>
-      <div class="hero-bottom">
-        <div><p class="eyebrow light">Od pierwszej idei do miejsca, które jest Twoje.</p><h1>Przestrzeń.<br><em>Z myślą o Tobie.</em></h1><a class="button button-light" href="#projekty">Zobacz nasze projekty <span aria-hidden="true">↘</span></a></div>
-        <a class="hero-caption" href="#projekty" data-open-project="kia"><span class="caption-line"></span><span>SALON KIA / BYTOM<small>Architektura usługowa · Odkryj projekt ↗</small></span></a>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-controls">
+        <div class="hero-left">
+          <div class="hero-short-copy"><p>Architektura zaczyna się od Ciebie.</p><p>My nadajemy jej kształt.</p></div>
+          <div class="hero-actions"><a class="hero-cta hero-cta-primary" href="#projekty">Zobacz nasze projekty <span aria-hidden="true">↗</span></a><a class="hero-cta hero-cta-secondary" href="#kontakt">Kontakt <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="hero-time" role="group" aria-label="Pora dnia wizualizacji">
+          <button class="is-active" type="button" data-hero-time="day" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>Dzień</button>
+          <button type="button" data-hero-time="night" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 13A9 9 0 0 1 11 3.3 9 9 0 1 0 20.7 13Z"/></svg>Noc</button>
+        </div>
       </div>
-      <span class="hero-annotation">Koncepcja wizualna AI na podstawie projektu pracowni</span>
-      <button class="motion-toggle" aria-pressed="false" aria-label="Wstrzymaj animację hero">Ⅱ</button>
     </section>
     <section class="statement section-pad" aria-labelledby="statement-title">
       <p class="eyebrow reveal">01 / Nasze podejście</p>

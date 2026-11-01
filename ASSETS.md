@@ -25,3 +25,17 @@ Prompt użyty do generacji:
 ## Fonty
 
 Manrope i Newsreader pobrane z Google Fonts i serwowane lokalnie. Licencje: `assets/Manrope-OFL.txt` i `assets/Newsreader-OFL.txt`.
+
+## Hero v2 — chmury i kolorowa noc
+
+`assets/hero-clouds.webp` i `assets/hero-night-color.webp` wygenerowano wbudowanym narzędziem imagegen. Nocny wariant dopasowano do kompozycji dziennej, zachowując kolorowe światło oraz odbicia. Wersja monochromatyczna została odrzucona i nie jest częścią strony. Pliki końcowe skompresowano do WebP.
+
+Warstwy nieba, napisu i budynku składa SVG. Maska odwzorowuje dach i bryłę budynku, a gradient łączy ruchome niebo z otoczeniem. Ruch chmur realizuje CSS, zmiana pory dnia jest obsługiwana lokalnie w JavaScript. Napis nie jest wtopiony w wizualizację.
+
+Prompt finalnego wariantu kolorowego:
+
+> Edit the supplied night architectural visualization to NATURAL RICH COLOR. It must NOT be monochrome. Preserve exact geometry, camera viewpoint, crop, building roofline positions, cars and all details. Keep the exact 1870x841 panoramic composition. Change only the color and lighting: deep midnight NAVY BLUE cloudy sky, warm AMBER and golden light glowing from inside the showroom and reflecting naturally onto the wet paving, dark graphite exterior facade with subtle cool blue reflections in the upper glazing, natural dark GREEN foliage, neutral silver cars, KIA logos illuminated clean white. Premium photorealistic architectural night photography. Elegant believable contrast of warm amber interior and cool blue night, visibly colorful but restrained and refined. No new text, no added elements, no watermark.
+
+Prompt chmur:
+
+> Use case: photorealistic-natural. Asset type: extra wide panoramic cloud sky texture for the animated background of an architecture website. Only a realistic bright overcast sky, wispy and soft layered silver-grey clouds with a little open pale grey sky between, sophisticated quiet editorial atmosphere, monochrome black and white. Wide composition 3:1 panorama. Uniform luminosity from left to right, soft variation from darker upper clouds to pale lower sky, no dramatic sun, no horizon, no ground, no buildings, no objects, no lettering, no watermarks. Photorealistic, elegant, diffuse light, cloud details clearly visible but restrained.

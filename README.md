@@ -14,7 +14,7 @@ Node.js 20+; bez instalowania zależności. Strona działa także po otwarciu `i
 
 Ciepły off-white, kamienne szarości, Manrope i Newsreader. Struktura inspirowana rytmem monikaserbista.pl: hero, podejście, oferta, portfolio, cytat, pracownia, proces i kontakt. Własny układ i treści dopasowane do Architekci KP.
 
-Hero wykorzystuje wariant AI salonu KIA w Bytomiu, delikatny ruch kadru i napis maskowany bryłą budynku. To animacja interfejsu, nie wygenerowany film. Ruch można wstrzymać; strona respektuje preferencję ograniczonego ruchu. Portfolio zawiera oryginalne wizualizacje, filtry i dostępne z klawiatury galerie w natywnym dialogu. Menu jest responsywne.
+Hero wykorzystuje dzienny i kolorowy nocny wariant AI salonu KIA w Bytomiu. Poruszają się wyłącznie chmury w górnej części kadru; budynek pozostaje nieruchomy. Napis ARCHITEKCI KP (Manrope 800) jest warstwą za bryłą budynku. Po lewej znajdują się dwa krótkie zdania i odnośniki do projektów oraz kontaktu, po prawej przełącznik dzień/noc. Interfejs hero i nawigacja są biało-czarne, wizualizacje pozostają kolorowe. Strona respektuje preferencję ograniczonego ruchu. Portfolio zawiera oryginalne wizualizacje, filtry i dostępne z klawiatury galerie w natywnym dialogu. Menu jest responsywne.
 
 Kontakt prowadzi do e-maila, telefonu i mapy. Strona nie zbiera danych i nie udaje działającego formularza. To wstępna koncepcja, dlatego ma `noindex,nofollow`; przed docelowym uruchomieniem należy zatwierdzić treści i zmienić ustawienia indeksowania.
 
